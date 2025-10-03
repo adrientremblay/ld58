@@ -1,9 +1,25 @@
 extends CharacterBody3D
 
-
+# Constants
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const CAMERA_MAX_ANGLE = 80
+const CAMERA_MIN_ANGLE = -80
 
+# Children
+@onready var camera = $Camera3D
+
+func _unhandled_input(event: InputEvent):
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	elif event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			self.rotate_y(-event.relative.x * 0.01)
+			camera.rotate_x(-event.relative.y * 0.01)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(CAMERA_MIN_ANGLE), deg_to_rad(CAMERA_MAX_ANGLE))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

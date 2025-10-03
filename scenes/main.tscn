@@ -1,23 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=10 format=4 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="2_jyhfs"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="4_tefeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(25.0134, 1, 21.563)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6xl0"]
+albedo_texture = ExtResource("4_tefeu")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tipki"]
+_surfaces = [{
+"aabb": AABB(-6, -0.500122, -5.5, 11, 9.00012, 14.5),
+"attribute_data": PackedByteArray("AAAgwAAAgL4AAEBAAACAvgAAQEAACIA+AAAgwAAIgD4AAJBAAAiAPgD/L8AACIA+AP8vwAAAgL4AAJBAAACAvgAAkMAAAEBAAACQwAAAIMAA/y9AAAAgwAD/L0AAAEBAAACQQAAAQEAA/y/AAABAQAD/L8AAACDAAACQQAAAIMAAAJDAAACAvgD/L0AAAIC+AP8vQAAIgD4AAJDAAAiAPgAAIEAACIA+AABAwAAIgD4AAEDAAACAvgAAIEAAAIC+AADAvwAAiMAAAIC+AACIwAAAgL4AAIC+AADAvwAAgL4AAGBAAACAvgAAIEAAAIC+AAAgQAAAiMAAAGBAAACIwAAAYMAAAIC+AABgwAAAwL8AACDAAADAvwAAIMAAAIC+AABgQAAAgL4AACBAAACAvgAAIEAAAMC/AABgQAAAwL8AAGDAAACIwAAAIMAAAIjAAAAgwAAAgL4AAGDAAACAvgAAwD8AAIC+AACAPgAAgL4AAIA+AACIwAAAwD8AAIjA"),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8A"),
+"material": SubResource("StandardMaterial3D_o6xl0"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AACgQAAAAD8AALDAAADAwAAAAD8AALDAAADAwAAIAL8AALDAAACgQAAIAL8AALDAAADAwAAIAL8AABBBAADAwAAIAL8A/6/AAADAwAAAAD8A/6/AAADAwAAAAD8AABBBAADAwAAAAL8AABBBAACgQAAAAL8AABBBAACgQAAAAL8A/6/AAADAwAAAAL8A/6/AAADAwAAAAD8AABBBAADAwAAAAD8A/6/AAACgQAAAAD8A/6/AAACgQAAAAD8AABBBAACgQAAAAD8AABBBAACgQAAAAD8A/6/AAACgQAAIAL8A/6/AAACgQAAIAL8AABBBAACgQAAIAL8AABBBAADAwAAIAL8AABBBAADAwAAAAD8AABBBAACgQAAAAD8AABBBAABAQAAACEEAAKBAAAAAPwAACEEAAKBAAAAAPwAAAD8AAKBAAABAQAAAAD8AAKBAAAAAPwAAAD8AAOBAAAAAPwAAAD8AAKBAAAAAPwAACEEAAKBAAAAAPwAACEEAAOBAAAAAPwAAAD8AAOBAAABAQAAAAD8AAOBAAABAQAAAAD8AAKBAAAAAPwAAAD8AAKBAAAAAPwAACEEAAOBAAAAAPwAACEEAAKBAAABAQAAACEEAAKBAAABAQAAACEEAAOBAAABAQAAACEEAAOBAAABAQAAACEEAAKBAAABAQAAAAD8AAKBAAABAQAAAAD8AAOBAAABAQAAAAD8AAOBAAAAAPwAAAD8AAOBAAAAAPwAACEEAAOBAAABAQAAACEEAAOBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_85g3d"]
+points = PackedVector3Array(5, 0.5, 9, 5, -0.5, 9, -6, 0.5, 9, -6, -0.5, 9, 5, 0.5, -5.5, 5, -0.5, -5.5, -6, 0.5, -5.5, -6, -0.5, -5.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_choun"]
+points = PackedVector3Array(3, 8.5, 7, 3, 0.5, 7, 0.5, 8.5, 7, 0.5, 0.5, 7, 3, 8.5, 5, 3, 0.5, 5, 0.5, 8.5, 5, 0.5, 0.5, 5)
+
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30854, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.01641)
-mesh = SubResource("BoxMesh_o5qli")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57026, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.671265, -0.516482, -4.03433)
 shape = SubResource("BoxShape3D_o5qli")
+
+[node name="FuncGodotMap" type="Node3D" parent="."]
+script = ExtResource("2_jyhfs")
+local_map_file = "uid://cfer4lcrf7s01"
+map_settings = ExtResource("3_tbgi4")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap"]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_tipki")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_85g3d")
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_choun")

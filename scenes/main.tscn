@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=4 format=3 uid="uid://dt6x6gd5ur568"]
 
-[ext_resource type="Script" uid="uid://bkkmit0k68hvc" path="res://scripts/player.gd" id="1_o5qli"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5qli"]
+[ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
 
@@ -11,15 +9,8 @@ size = Vector3(25.0134, 1, 21.563)
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30854, 0)
-script = ExtResource("1_o5qli")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_o5qli")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.628703, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.01641)

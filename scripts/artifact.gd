@@ -15,4 +15,5 @@ func _physics_process(delta: float) -> void:
 	var direction_vector_world = Vector3(direction_vector_screen.x, 0, direction_vector_screen.y)
 	
 	# Apply the force
-	add_constant_central_force(direction_vector_world.normalized())
+	apply_central_impulse(direction_vector_world.normalized())
+	#Screen.print(linear_velocity.x)

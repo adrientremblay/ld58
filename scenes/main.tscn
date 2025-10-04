@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=9 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -12,6 +12,9 @@ ambient_light_energy = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(43.2847, 1, 56.0139)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
+albedo_color = Color(0.5875, 1, 0.25, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
 font_size = 40
@@ -37,6 +40,7 @@ shape = SubResource("BoxShape3D_o5qli")
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12538, 0, 1.93936)
 size = Vector3(23.6048, 1, 20.2363)
+material = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70802, 0.311906, 4.31836)

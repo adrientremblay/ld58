@@ -27,5 +27,5 @@ func _on_grave_move_artifact_label_to_cursor(artifact: Artifact) -> void:
 	artifact_panel.position = get_viewport().get_mouse_position()
 
 func fill_artifact_container(artifact: Artifact):
-	$ArtifactPanel/VBoxContainer/NameLabel.text = artifact.name
+	$ArtifactPanel/VBoxContainer/NameLabel.text = artifact.artifact_name
 	$ArtifactPanel/VBoxContainer/ValueLabel.text = "Value: " + str(artifact.value) + "$"

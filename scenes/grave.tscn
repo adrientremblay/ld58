@@ -28,10 +28,10 @@ shape = SubResource("BoxShape3D_mlivn")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89366, 1.32083)
 
 [node name="PocketWatch" parent="." instance=ExtResource("4_lhpym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834813, 4.33249, 2.52066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834813, -0.176217, 2.52066)
 
 [node name="PocketWatch2" parent="." instance=ExtResource("4_lhpym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00161405, 4.33249, 1.09574)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00161405, -0.176217, 1.09574)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 2

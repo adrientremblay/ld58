@@ -14,6 +14,8 @@ const CAMERA_MIN_ANGLE = -80
 var looking_in_grave # indicates that the player is actively looking into a grave
 
 func _unhandled_input(event: InputEvent):
+	if looking_in_grave:
+		return
 	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -61,6 +63,8 @@ func toggle_looking_in_grave(grave: Grave) -> void:
 	if looking_in_grave:
 		camera.current = false
 		grave.grave_camera.current = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		camera.current = true
 		grave.grave_camera.current = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -27,3 +27,5 @@ func pickup_item():
 	if result:
 		if result.collider.is_in_group("artifact"):
 			Screen.print("artifact hit")
+			var artifact: Artifact = result.collider
+			artifact.dragging = true

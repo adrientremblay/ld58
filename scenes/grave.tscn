@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=12 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tlagva70qf7y" path="res://assets/models/sack/sack_model.tscn" id="5_qe13i"]
 [ext_resource type="PackedScene" uid="uid://b17smfjvy2ql8" path="res://assets/models/pocket_watch/pocket_watch.tscn" id="6_aulm7"]
 [ext_resource type="PackedScene" uid="uid://p5j1uwjic7gm" path="res://scenes/shovel.tscn" id="6_e7cip"]
+[ext_resource type="PackedScene" uid="uid://bb8i4gi2owcyi" path="res://scenes/mound_full.tscn" id="7_aulm7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mlivn"]
 size = Vector3(1.68649, 2.08386, 3.66162)
@@ -100,5 +101,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121148, -1.00935, 2.35279)
 
 [node name="PocketWatch5" parent="." instance=ExtResource("6_aulm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -1.00935, 0.46337)
+
+[node name="mound_full" parent="." instance=ExtResource("7_aulm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.64118)
 
 [connection signal="body_entered" from="SackDetectionArea" to="." method="_on_sack_detection_area_body_entered"]

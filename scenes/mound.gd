@@ -20,6 +20,6 @@ func _on_mid_area_body_entered(body: Node3D) -> void:
 		area_mid.monitoring = false
 
 func _on_bottom_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("tool") and mound_top:
+	if body.is_in_group("tool") and mound_bottom:
 		mound_bottom.queue_free()
 		area_bottom.monitoring = false

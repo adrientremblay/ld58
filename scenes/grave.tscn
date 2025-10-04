@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=5 format=3 uid="uid://c34otpyaoqehk"]
 
+[ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
 [ext_resource type="PackedScene" uid="uid://bp807l4qyogow" path="res://assets/models/mound_empty/mound_empty.glb" id="2_inmiy"]
 
@@ -7,6 +8,7 @@
 size = Vector3(1.68649, 2.08386, 3.66162)
 
 [node name="Grave" type="Area3D" groups=["grave"]]
+script = ExtResource("1_inmiy")
 
 [node name="gravestone" parent="." instance=ExtResource("1_mlivn")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -17,3 +19,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.64499)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045517, 0.541931, 1.33081)
 shape = SubResource("BoxShape3D_mlivn")
+
+[node name="GraveCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89366, 1.32083)

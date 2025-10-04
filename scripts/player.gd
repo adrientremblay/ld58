@@ -49,4 +49,6 @@ func _input(event: InputEvent) -> void:
 		var areas: Array[Area3D] = player_interaction_area.get_overlapping_areas()
 		for area in areas:
 			if area.is_in_group("grave"):
-				print("interact")
+				var grave: Grave = area
+				camera.current = false
+				grave.grave_camera.current = true

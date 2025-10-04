@@ -9,6 +9,8 @@ const CAMERA_MIN_ANGLE = -80
 # Children
 @onready var camera: Camera3D = $Camera3D
 @onready var player_interaction_area: Area3D = $PlayerInteractionArea
+@onready var footstep_sounds: Node = $FootstepSounds
+@onready var footstep_animation_player: AnimationPlayer = $FootstepAnimationPlayer
 
 # Properties
 var looking_in_grave # indicates that the player is actively looking into a grave
@@ -44,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			footstep_animation_player.play("walk")
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -68,3 +71,7 @@ func toggle_looking_in_grave(grave: Grave) -> void:
 		camera.current = true
 		grave.disactivate()
 		
+func play_random_footstep():
+	var footstep_sounds_list = footstep_sounds.get_children()
+	var random_sound = footstep_sounds_list[randi_range(0, footstep_sounds_list.size()-1)]
+	random_sound.play()

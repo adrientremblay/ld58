@@ -47,8 +47,8 @@ size = Vector3(1.38169, 1.7747, 2.95116)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, 0.486048, 2.67804)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20821, 0)
-omni_range = 14.0901
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13179, 2.27351, 5.03279)
+omni_range = 3.93338
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -81,4 +81,22 @@ layout_mode = 2
 text = "Money: 20$"
 label_settings = SubResource("LabelSettings_0wfyh")
 
+[node name="ArtifactPanel" type="PanelContainer" parent="HUD"]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 50.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/ArtifactPanel"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer"]
+layout_mode = 2
+text = "name"
+
+[node name="ValueLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer"]
+layout_mode = 2
+text = "Value: 12.0$"
+
 [connection signal="collect_artifact" from="Grave" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

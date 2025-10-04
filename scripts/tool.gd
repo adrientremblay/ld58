@@ -17,6 +17,9 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if not dragging:
 		return
+		
+	# Tools should always points forward when being held
+	look_at(Vector3.FORWARD)
 	
 	var grave_camera = get_viewport().get_camera_3d()
 	
@@ -37,4 +40,5 @@ func _physics_process(delta: float) -> void:
 			
 		# Apply the force
 		apply_central_impulse(direction_vector_world.normalized())
+		
 		

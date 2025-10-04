@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=6 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c34otpyaoqehk" path="res://scenes/grave.tscn" id="2_0wfyh"]
@@ -10,6 +10,9 @@ ambient_light_energy = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(43.2847, 1, 56.0139)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
+font_size = 40
 
 [node name="Main" type="Node3D"]
 
@@ -44,5 +47,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, 0.486048, 2.67804)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20821, 0)
 omni_range = 14.0901
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71182, 1.42835, 3.77791)
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnchorTopRight" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/AnchorTopRight"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/AnchorTopRight/VBoxContainer"]
+layout_mode = 2
+text = "Money: 20$"
+label_settings = SubResource("LabelSettings_0wfyh")

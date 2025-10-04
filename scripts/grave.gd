@@ -2,12 +2,16 @@ class_name Grave extends Area3D
 
 # Children
 @onready var grave_camera = $GraveCamera
+@onready var sack_model = $SackModel
 
 # Properties
 var grave_active = false
 
 # Constants
 var RAY_LENGTH = 500
+
+func _ready() -> void:
+	sack_model.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and grave_active:
@@ -26,7 +30,17 @@ func pickup_item():
 	# Checking for a match with an artifact
 	if result:
 		if result.collider.is_in_group("artifact"):
-			Screen.print("artifact hit")
 			var artifact: Artifact = result.collider
 			artifact.dragging = true
  
+func activate() -> void:
+	grave_camera.current = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	grave_active = true
+	sack_model.visible = true
+
+func disactivate() -> void:
+	grave_camera.current = false 
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	grave_active = false
+	sack_model.visible = false

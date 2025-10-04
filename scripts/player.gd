@@ -10,17 +10,20 @@ const CAMERA_MIN_ANGLE = -80
 @onready var camera: Camera3D = $Camera3D
 @onready var player_interaction_area: Area3D = $PlayerInteractionArea
 
+# Properties
+var looking_in_grave # indicates that the player is actively looking into a grave
+
 func _unhandled_input(event: InputEvent):
+	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			self.rotate_y(-event.relative.x * 0.01)
-			camera.rotate_x(-event.relative.y * 0.01)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(CAMERA_MIN_ANGLE), deg_to_rad(CAMERA_MAX_ANGLE))
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion and not looking_in_grave:
+		self.rotate_y(-event.relative.x * 0.01)
+		camera.rotate_x(-event.relative.y * 0.01)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(CAMERA_MIN_ANGLE), deg_to_rad(CAMERA_MAX_ANGLE))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,15 +35,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	# TODO As good practice, you should replace UI actions with custom gameplay actions.
+	if not looking_in_grave:	
+		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
 
@@ -50,5 +54,13 @@ func _input(event: InputEvent) -> void:
 		for area in areas:
 			if area.is_in_group("grave"):
 				var grave: Grave = area
-				camera.current = false
-				grave.grave_camera.current = true
+				toggle_looking_in_grave(grave)
+
+func toggle_looking_in_grave(grave: Grave) -> void:
+	looking_in_grave = not looking_in_grave
+	if looking_in_grave:
+		camera.current = false
+		grave.grave_camera.current = true
+	else:
+		camera.current = true
+		grave.grave_camera.current = false

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://p5j1uwjic7gm"]
+
+[ext_resource type="PackedScene" uid="uid://rr2a5xsfuel7" path="res://assets/models/shovel/shovel.glb" id="1_d01uh"]
+
+[node name="Shovel" instance=ExtResource("1_d01uh")]

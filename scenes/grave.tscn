@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=10 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
 [ext_resource type="PackedScene" uid="uid://bp807l4qyogow" path="res://assets/models/mound_empty/mound_empty.glb" id="2_inmiy"]
 [ext_resource type="PackedScene" uid="uid://cr557rpekbykr" path="res://scenes/pocket_watch.tscn" id="4_lhpym"]
 [ext_resource type="PackedScene" uid="uid://tlagva70qf7y" path="res://assets/models/sack/sack_model.tscn" id="5_qe13i"]
+[ext_resource type="PackedScene" uid="uid://p5j1uwjic7gm" path="res://scenes/shovel.tscn" id="6_e7cip"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mlivn"]
 size = Vector3(1.68649, 2.08386, 3.66162)
@@ -56,5 +57,8 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SackDetectionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.311, 0.155979, 1.508)
 shape = SubResource("CylinderShape3D_qe13i")
+
+[node name="Shovel" parent="." instance=ExtResource("6_e7cip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78917, 0.0799795, 1.92015)
 
 [connection signal="body_entered" from="SackDetectionArea" to="." method="_on_sack_detection_area_body_entered"]

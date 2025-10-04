@@ -3,6 +3,10 @@ class_name Artifact extends RigidBody3D
 # Properties
 var dragging = false
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("click") and dragging:
+		dragging = false
+
 func _physics_process(delta: float) -> void:
 	if not dragging:
 		return

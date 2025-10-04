@@ -1,11 +1,28 @@
 class_name Artifact extends RigidBody3D
 
+# Enums
+#enum ArtifactName {
+#	POCKET_WATCH
+#}
+
 # Constants
 var UP_FORCE = 2.5 # The constant number used for the y axis when being dragged so that the artifact goes up
 var Y_CAP = 1 # The max Y position to apply the upward force to
+#var ARTIFACT_DATA = {
+#	ArtifactName.POCKET_WATCH: {
+#		"value": 20
+#	}
+#}
 
 # Properties
 var dragging = false
+
+# Data properties
+@export var artifact_name: String
+@export var value: float
+
+#func _ready() -> void:
+	# Populate data properties
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and dragging:

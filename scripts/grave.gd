@@ -10,6 +10,9 @@ var grave_active = false
 # Constants
 var RAY_LENGTH = 500
 
+# Signals
+signal collect_artifact(artifact: Artifact)
+
 func _ready() -> void:
 	sack_model.visible = false
 
@@ -47,4 +50,6 @@ func disactivate() -> void:
 
 func _on_sack_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("artifact"):
-		body.queue_free()
+		var artifact: Artifact = body
+		collect_artifact.emit(artifact)
+		artifact.queue_free()

@@ -10,6 +10,8 @@ radius = 0.292288
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_4djhw")
+artifact_name = "Pocket Watch"
+value = 20.0
 
 [node name="pocket_watch" parent="." instance=ExtResource("1_scedt")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

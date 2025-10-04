@@ -23,7 +23,6 @@ func _input(event: InputEvent) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if grave_active and event is InputEventMouseMotion:
-		Screen.print("mouse moved")
 		# Casting the ray
 		var result = shoot_ray()
 		# Checking for a match with an artifact
@@ -31,8 +30,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			if result.collider.is_in_group("artifact"):
 				var artifact: Artifact = result.collider
 				if artifact.dragging:
+					move_artifact_label_to_cursor.emit(null)
 					return
 				move_artifact_label_to_cursor.emit(artifact)
+			else:
+				move_artifact_label_to_cursor.emit(null)
+		else:
+				move_artifact_label_to_cursor.emit(null)
 
 func pickup_item():
 	# Casting the ray

@@ -6,7 +6,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	artifact_panel.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,6 +17,12 @@ func update_money_label(money: float):
 	money_label.text = "Money: " + str(money) + "$"
 
 func _on_grave_move_artifact_label_to_cursor(artifact: Artifact) -> void:
+	if not artifact:
+		artifact_panel.visible = false
+		return
+
+	artifact_panel.visible = true
+	
 	fill_artifact_container(artifact)
 	artifact_panel.position = get_viewport().get_mouse_position()
 

@@ -46,6 +46,10 @@ func pickup_item():
 		if result.collider.is_in_group("artifact"):
 			var artifact: Artifact = result.collider
 			artifact.dragging = true
+		elif result.collider.is_in_group("tool"):
+			var tool: Tool = result.collider
+			tool.dragging = true
+			Screen.print("Dragging tool")
  
 func activate() -> void:
 	grave_camera.current = true

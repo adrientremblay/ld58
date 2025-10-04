@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=11 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
@@ -12,6 +12,9 @@ size = Vector3(1.68649, 2.08386, 3.66162)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lhpym"]
 data = PackedVector3Array(-1, 0, 1, -1, -2.4187, -1, -1, -2.4187, 1, -1, 0, 1, -1, 0, -1, -1, -2.4187, -1, 1, 0, -1, 1, -2.4187, 1, 1, -2.4187, -1, 1, 0, -1, 1, 0, 1, 1, -2.4187, 1, -1, -2.4187, -1, 1, -2.4187, 1, -1, -2.4187, 1, -1, -2.4187, -1, 1, -2.4187, -1, 1, -2.4187, 1, -1, 0, -1, 1, -2.4187, -1, -1, -2.4187, -1, -1, 0, -1, 1, 0, -1, 1, -2.4187, -1, 1, 0, 1, -1, -2.4187, 1, 1, -2.4187, 1, 1, 0, 1, -1, 0, 1, -1, -2.4187, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e7cip"]
+size = Vector3(1.54834, 0.500732, 3.41284)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qe13i"]
 height = 0.14093
@@ -66,6 +69,14 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.662, 0, 0, 0, 0.5, 0, 0, 0, 1.471, 0, 0, 1.64289)
 shape = SubResource("ConcavePolygonShape3D_lhpym")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44441, -0.249634, 1.45896)
+shape = SubResource("BoxShape3D_e7cip")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42854, -0.249634, 1.45896)
+shape = SubResource("BoxShape3D_e7cip")
 
 [node name="SackModel" parent="." instance=ExtResource("5_qe13i")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.31073, 0, 1.50754)

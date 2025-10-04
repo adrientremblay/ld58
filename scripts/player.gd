@@ -64,7 +64,9 @@ func toggle_looking_in_grave(grave: Grave) -> void:
 		camera.current = false
 		grave.grave_camera.current = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		grave.grave_active = true
 	else:
 		camera.current = true
 		grave.grave_camera.current = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		grave.grave_active = false

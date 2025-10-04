@@ -5,7 +5,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_4djhw"]
 radius = 0.292288
 
-[node name="PocketWatch" type="RigidBody3D"]
+[node name="PocketWatch" type="RigidBody3D" groups=["artifact"]]
 collision_layer = 2
 collision_mask = 2
 mass = 0.1

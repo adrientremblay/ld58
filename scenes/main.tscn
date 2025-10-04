@@ -26,7 +26,7 @@ script = ExtResource("1_sugp2")
 environment = SubResource("Environment_tbgi4")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57026, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57026, 8.01735)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550577, 0)
@@ -45,9 +45,11 @@ material = SubResource("StandardMaterial3D_jyhfs")
 [node name="Grave" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, -0.106132, 2.67804)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13179, 2.27351, 5.03279)
-omni_range = 3.93338
+[node name="Grave2" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845984, -0.106132, 2.67804)
+
+[node name="Grave3" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27652, -0.106132, 2.67804)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -99,3 +101,7 @@ text = "Value: 12.0$"
 
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave2" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave2" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave3" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave3" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

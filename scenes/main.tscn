@@ -45,4 +45,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20821, 0)
 omni_range = 14.0901
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71182, 0.26967, 3.77791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71182, 1.42835, 3.77791)

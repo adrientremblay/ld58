@@ -3,6 +3,8 @@ class_name Grave extends Area3D
 # Children
 @onready var grave_camera = $GraveCamera
 @onready var sack_model = $SackModel
+@onready var shovel = $Shovel
+@onready var shovel_spawn = $ShovelSpawn
 
 # Properties
 var grave_active = false
@@ -16,6 +18,7 @@ signal move_artifact_label_to_cursor(artifact: Artifact)
 
 func _ready() -> void:
 	sack_model.visible = false
+	shovel.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and grave_active:
@@ -49,19 +52,31 @@ func pickup_item():
 		elif result.collider.is_in_group("tool"):
 			var tool: Tool = result.collider
 			tool.dragging = true
-			Screen.print("Dragging tool")
  
 func activate() -> void:
 	grave_camera.current = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	grave_active = true
 	sack_model.visible = true
+	shovel.visible = true
+	
+	# Reset the position of the shovel
+	shovel.sleeping = true
+	shovel.freeze = true
+	shovel.linear_velocity = Vector3.ZERO
+	shovel.angular_velocity = Vector3.ZERO
+	shovel.set_deferred("global_position", shovel_spawn.global_position)
+	shovel.set_deferred("basis", Basis().looking_at(Vector3.FORWARD, Vector3.UP))
+	shovel.sleeping = false
+	shovel.freeze = false
+	Screen.print("balls")
 
 func disactivate() -> void:
 	grave_camera.current = false 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	grave_active = false
 	sack_model.visible = false
+	shovel.visible = false
 
 func _on_sack_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("artifact"):

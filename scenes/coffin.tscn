@@ -16,5 +16,4 @@ script = ExtResource("2_o11qi")
 surface_material_override/0 = SubResource("StandardMaterial3D_fe18d")
 
 [node name="Lid" parent="." index="1"]
-transform = Transform3D(-0.162999, -0.986626, 0, 0.986626, -0.162999, 0, 0, 0, 1, -0.470327, 0.454543, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_o11qi")

@@ -27,6 +27,7 @@ size = Vector3(0.963379, 2.45746, 0.347656)
 
 [node name="Grave" type="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.045819)
+layers = 0
 operation = 2
 size = Vector3(1.325, 1.251, 2.95286)
 script = ExtResource("1_inmiy")
@@ -75,6 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -0.387421, -1.1764)
 
 [node name="mound_full" parent="." instance=ExtResource("7_aulm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, 0.00140449)
+visible = false
 
 [node name="ShovelSpawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 1.0683, -0.210546)

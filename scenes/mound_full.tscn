@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb8i4gi2owcyi"]
+[gd_scene load_steps=10 format=3 uid="uid://bb8i4gi2owcyi"]
 
 [ext_resource type="PackedScene" uid="uid://dldhebtbwjm51" path="res://assets/models/mount_full/mound_full.glb" id="1_8tmo6"]
 [ext_resource type="Script" uid="uid://crfdqvj5pvd1j" path="res://scenes/mound.gd" id="2_klly7"]
+[ext_resource type="AudioStream" uid="uid://b8gbqvdus3eej" path="res://assets/audio/unearth.wav" id="3_g8luq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tmo6"]
 albedo_color = Color(0.26, 0.13364, 0.0494, 1)
@@ -56,6 +57,10 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BottomArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00479182, 0.0918736, 1.00009)
 shape = SubResource("BoxShape3D_1u2m5")
+
+[node name="Unearth" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("3_g8luq")
+volume_db = -10.0
 
 [connection signal="body_entered" from="TopArea" to="." method="_on_top_area_body_entered"]
 [connection signal="body_entered" from="MidArea" to="." method="_on_mid_area_body_entered"]

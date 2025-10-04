@@ -9,17 +9,22 @@ class_name Mound extends Node3D
 @onready var area_mid: Area3D  = $MidArea
 @onready var area_bottom: Area3D  = $BottomArea
 
+@onready var unearth_sound: AudioStreamPlayer = $Unearth
+
 func _on_top_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("tool") and mound_top:
 		mound_top.queue_free()
 		area_top.monitoring = false
+		unearth_sound.play()
 
 func _on_mid_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("tool") and mound_mid:
 		mound_mid.queue_free()
 		area_mid.monitoring = false
+		unearth_sound.play()
 
 func _on_bottom_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("tool") and mound_bottom:
 		mound_bottom.queue_free()
 		area_bottom.monitoring = false
+		unearth_sound.play()

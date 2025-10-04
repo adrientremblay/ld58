@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkp2p6hb7ok6"]
+
+[ext_resource type="PackedScene" uid="uid://dejsqix0eja7" path="res://assets/models/coffin/coffin.glb" id="1_fe18d"]
+[ext_resource type="Script" uid="uid://7bhfwtkdoaxo" path="res://scripts/coffin.gd" id="2_o11qi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fe18d"]
+albedo_color = Color(0.829515, 0.639597, 0.412274, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o11qi"]
+albedo_color = Color(0.831373, 0.639216, 0.411765, 1)
+
+[node name="Coffin" instance=ExtResource("1_fe18d")]
+script = ExtResource("2_o11qi")
+
+[node name="Coffin" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fe18d")
+
+[node name="Lid" parent="." index="1"]
+transform = Transform3D(-0.162999, -0.986626, 0, 0.986626, -0.162999, 0, 0, 0, 1, -0.470327, 0.454543, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_o11qi")

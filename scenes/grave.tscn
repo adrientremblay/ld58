@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=15 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b17smfjvy2ql8" path="res://assets/models/pocket_watch/pocket_watch.tscn" id="6_aulm7"]
 [ext_resource type="PackedScene" uid="uid://p5j1uwjic7gm" path="res://scenes/shovel.tscn" id="6_e7cip"]
 [ext_resource type="PackedScene" uid="uid://bb8i4gi2owcyi" path="res://scenes/mound_full.tscn" id="7_aulm7"]
+[ext_resource type="PackedScene" uid="uid://dkp2p6hb7ok6" path="res://scenes/coffin.tscn" id="9_u8mm0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mlivn"]
 size = Vector3(1.68649, 2.08386, 3.66162)
@@ -68,15 +69,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 1.45503, 0.280374)
 [node name="PocketWatch3" parent="." instance=ExtResource("6_aulm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109949, -0.387421, -0.306922)
 
-[node name="PocketWatch4" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121148, -0.387421, 0.713018)
-
-[node name="PocketWatch5" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -0.387421, -1.1764)
-
 [node name="mound_full" parent="." instance=ExtResource("7_aulm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, 0.00140449)
-visible = false
 
 [node name="ShovelSpawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 1.0683, -0.210546)
@@ -107,4 +101,8 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000732422, 0.778186, -1.63976)
 shape = SubResource("BoxShape3D_7om2q")
 
+[node name="Coffin" parent="." instance=ExtResource("9_u8mm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120309, -0.561859, 0.00241645)
+
 [connection signal="body_entered" from="SackDetectionArea" to="." method="_on_sack_detection_area_body_entered"]
+[connection signal="fully_uncovered" from="mound_full" to="Coffin" method="_on_mound_full_fully_uncovered"]

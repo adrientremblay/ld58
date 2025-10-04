@@ -20,7 +20,7 @@ func pickup_item():
 	var ray_target = ray_origin + grave_camera.project_ray_normal(mouse_position) * RAY_LENGTH
 	# Creating the raycast
 	var space = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_target)
+	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_target, 2)
 	# Casting the ray
 	var result = space.intersect_ray(query)
 	# Checking for a match with an artifact

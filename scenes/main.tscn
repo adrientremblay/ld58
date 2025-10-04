@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=5 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c34otpyaoqehk" path="res://scenes/grave.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://cr557rpekbykr" path="res://scenes/pocket_watch.tscn" id="3_sugp2"]
 
 [sub_resource type="Environment" id="Environment_tbgi4"]
 ambient_light_source = 2
@@ -44,9 +43,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, 0.486048, 2.67804)
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20821, 0)
 omni_range = 14.0901
-
-[node name="PocketWatch" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47094, 1.98582, -3.87895)
-
-[node name="PocketWatch2" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47094, 3.18355, -3.78108)

@@ -42,13 +42,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12538, 0, 1.93936)
 size = Vector3(23.6048, 1, 20.2363)
 material = SubResource("StandardMaterial3D_jyhfs")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70802, 0.311906, 4.31836)
-operation = 2
-size = Vector3(1.38169, 1.7747, 2.95116)
-
-[node name="Grave" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, 0.486048, 2.67804)
+[node name="Grave" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, -0.106132, 2.67804)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13179, 2.27351, 5.03279)
@@ -102,5 +97,5 @@ text = "name"
 layout_mode = 2
 text = "Value: 12.0$"
 
-[connection signal="collect_artifact" from="Grave" to="." method="_on_grave_collect_artifact"]
-[connection signal="move_artifact_label_to_cursor" from="Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

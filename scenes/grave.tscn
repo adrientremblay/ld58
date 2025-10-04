@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=13 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
 [ext_resource type="PackedScene" uid="uid://bp807l4qyogow" path="res://assets/models/mound_empty/mound_empty.glb" id="2_inmiy"]
+[ext_resource type="Script" uid="uid://c5wl0b2setkgs" path="res://scripts/grave_interaction_area.gd" id="4_7om2q"]
 [ext_resource type="PackedScene" uid="uid://tlagva70qf7y" path="res://assets/models/sack/sack_model.tscn" id="5_qe13i"]
 [ext_resource type="PackedScene" uid="uid://b17smfjvy2ql8" path="res://assets/models/pocket_watch/pocket_watch.tscn" id="6_aulm7"]
 [ext_resource type="PackedScene" uid="uid://p5j1uwjic7gm" path="res://scenes/shovel.tscn" id="6_e7cip"]
@@ -21,49 +22,31 @@ size = Vector3(1.54834, 0.500732, 3.41284)
 height = 0.14093
 radius = 0.394531
 
-[node name="Grave" type="Area3D" groups=["grave"]]
+[node name="Grave" type="CSGBox3D"]
+layers = 0
+operation = 2
+size = Vector3(1.32465, 1.25118, 2.95698)
 script = ExtResource("1_inmiy")
 
 [node name="gravestone" parent="." instance=ExtResource("1_mlivn")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.621929, -1.63883)
 
 [node name="mound_empty" parent="." instance=ExtResource("2_inmiy")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.64499)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.621929, 0.00615773)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045517, 0.541931, 1.33081)
+[node name="GraveInteractionArea" type="Area3D" parent="." node_paths=PackedStringArray("grave") groups=["grave"]]
+script = ExtResource("4_7om2q")
+grave = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GraveInteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045517, 1.16386, -0.308022)
 shape = SubResource("BoxShape3D_mlivn")
 
 [node name="GraveCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89366, 1.32083)
-
-[node name="PocketWatch" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834813, -0.176217, 2.52066)
-script = null
-
-[node name="PocketWatch2" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00161405, -0.176217, 1.09574)
-script = null
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.51559, -0.318002)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, -1.63883)
 collision_layer = 2
 collision_mask = 2
 
@@ -80,9 +63,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42854, -0.249634, 1.45896)
 shape = SubResource("BoxShape3D_e7cip")
 
 [node name="SackModel" parent="." instance=ExtResource("5_qe13i")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.31073, 0, 1.50754)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.31073, 0.621929, -0.131292)
 
 [node name="SackDetectionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, -1.63883)
 collision_layer = 2
 collision_mask = 2
 
@@ -91,21 +75,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.311, 0.155979, 1.508)
 shape = SubResource("CylinderShape3D_qe13i")
 
 [node name="Shovel" parent="." instance=ExtResource("6_e7cip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 0.833099, 1.92015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 1.45503, 0.281318)
 
 [node name="PocketWatch3" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109949, -1.00935, 1.33285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109949, -0.387421, -0.305978)
 
 [node name="PocketWatch4" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121148, -1.00935, 2.35279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121148, -0.387421, 0.713962)
 
 [node name="PocketWatch5" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -1.00935, 0.46337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -0.387421, -1.17546)
 
 [node name="mound_full" parent="." instance=ExtResource("7_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.64118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, 0.00234899)
 
 [node name="ShovelSpawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 0.44637, 1.42923)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 1.0683, -0.209602)
 
 [connection signal="body_entered" from="SackDetectionArea" to="." method="_on_sack_detection_area_body_entered"]

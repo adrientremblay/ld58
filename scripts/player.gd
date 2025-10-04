@@ -55,8 +55,8 @@ func _input(event: InputEvent) -> void:
 		var areas: Array[Area3D] = player_interaction_area.get_overlapping_areas()
 		for area in areas:
 			if area.is_in_group("grave"):
-				var grave: Grave = area
-				toggle_looking_in_grave(grave)
+				var grave_interaction_area: GraveInteractionArea = area
+				toggle_looking_in_grave(grave_interaction_area.grave)
 
 func toggle_looking_in_grave(grave: Grave) -> void:
 	looking_in_grave = not looking_in_grave

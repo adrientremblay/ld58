@@ -1,4 +1,4 @@
-class_name Grave extends Area3D
+class_name Grave extends CSGBox3D
 
 # Children
 @onready var grave_camera = $GraveCamera
@@ -69,7 +69,6 @@ func activate() -> void:
 	shovel.set_deferred("basis", Basis().looking_at(Vector3.FORWARD, Vector3.UP))
 	shovel.sleeping = false
 	shovel.freeze = false
-	Screen.print("balls")
 
 func disactivate() -> void:
 	grave_camera.current = false 

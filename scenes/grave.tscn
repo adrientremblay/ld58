@@ -26,7 +26,6 @@ shape = SubResource("BoxShape3D_mlivn")
 
 [node name="GraveCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89366, 1.32083)
-projection = 1
 
 [node name="PocketWatch" parent="." instance=ExtResource("4_lhpym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0834813, -0.176217, 2.52066)

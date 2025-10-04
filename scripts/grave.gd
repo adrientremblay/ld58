@@ -29,3 +29,4 @@ func pickup_item():
 			Screen.print("artifact hit")
 			var artifact: Artifact = result.collider
 			artifact.dragging = true
+ 

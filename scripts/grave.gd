@@ -44,3 +44,7 @@ func disactivate() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	grave_active = false
 	sack_model.visible = false
+
+func _on_sack_detection_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("artifact"):
+		body.queue_free()

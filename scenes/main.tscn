@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=10 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c34otpyaoqehk" path="res://scenes/grave.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://c4k1685adavty" path="res://scenes/hud.gd" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://cti1hy5nlb7pb" path="res://assets/audio/sell_artifact.wav" id="5_tbgi4"]
 
 [sub_resource type="Environment" id="Environment_tbgi4"]
 ambient_light_source = 2
@@ -98,6 +99,9 @@ text = "name"
 [node name="ValueLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer"]
 layout_mode = 2
 text = "Value: 12.0$"
+
+[node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource("5_tbgi4")
 
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

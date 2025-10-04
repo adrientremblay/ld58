@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 func update_money_label(money: float):
 	# calculate the value
 	money_label.text = "Money: " + str(money) + "$"
+	$SellArtifactSound.play()
 
 func _on_grave_move_artifact_label_to_cursor(artifact: Artifact) -> void:
 	if not artifact:

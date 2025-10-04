@@ -79,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.311, 0.155979, 1.508)
 shape = SubResource("CylinderShape3D_qe13i")
 
 [node name="Shovel" parent="." instance=ExtResource("6_e7cip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 0.0799795, 1.92015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 0.833099, 1.92015)
 
 [node name="PocketWatch3" parent="." instance=ExtResource("6_aulm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109949, -1.00935, 1.33285)

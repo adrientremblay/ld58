@@ -26,18 +26,19 @@ size = Vector3(1.54834, 0.500732, 3.41284)
 size = Vector3(0.963379, 2.45746, 0.347656)
 
 [node name="Grave" type="CSGBox3D"]
-layers = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.045819)
 operation = 2
-size = Vector3(1.32465, 1.25118, 2.95698)
+size = Vector3(1.325, 1.251, 2.95286)
 script = ExtResource("1_inmiy")
 
 [node name="gravestone" parent="." instance=ExtResource("1_mlivn")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.621929, -1.63883)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.621929, -1.63977)
 
 [node name="mound_empty" parent="." instance=ExtResource("2_inmiy")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.621929, 0.00615773)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.621929, 0.00521323)
 
 [node name="GraveInteractionArea" type="Area3D" parent="." node_paths=PackedStringArray("grave") groups=["grave"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000944495)
 script = ExtResource("4_7om2q")
 grave = NodePath("..")
 
@@ -46,13 +47,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045517, 1.16386, -0.308022
 shape = SubResource("BoxShape3D_mlivn")
 
 [node name="GraveCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.51559, -0.318002)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.51559, -0.318946)
 
 [node name="SackModel" parent="." instance=ExtResource("5_qe13i")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.31073, 0.621929, -0.131292)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.31073, 0.621929, -0.132236)
 
 [node name="SackDetectionArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, -1.63883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, -1.63977)
 collision_layer = 2
 collision_mask = 2
 
@@ -61,25 +62,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.311, 0.155979, 1.508)
 shape = SubResource("CylinderShape3D_qe13i")
 
 [node name="Shovel" parent="." instance=ExtResource("6_e7cip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 1.45503, 0.281318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 1.45503, 0.280374)
 
 [node name="PocketWatch3" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109949, -0.387421, -0.305978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109949, -0.387421, -0.306922)
 
 [node name="PocketWatch4" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121148, -0.387421, 0.713962)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121148, -0.387421, 0.713018)
 
 [node name="PocketWatch5" parent="." instance=ExtResource("6_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -0.387421, -1.17546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338184, -0.387421, -1.1764)
 
 [node name="mound_full" parent="." instance=ExtResource("7_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, 0.00234899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, 0.00140449)
 
 [node name="ShovelSpawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 1.0683, -0.209602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 1.0683, -0.210546)
 
 [node name="ArtifactsStaticBody" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, -1.63883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, -1.63977)
 collision_layer = 2
 collision_mask = 2
 
@@ -96,6 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42854, -0.249634, 1.45896)
 shape = SubResource("BoxShape3D_e7cip")
 
 [node name="HeadstoneStaticBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000944495)
 collision_layer = 3
 collision_mask = 3
 

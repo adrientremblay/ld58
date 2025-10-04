@@ -12,6 +12,8 @@ points = PackedVector3Array(3.24235, -19.9455, 0.363014, -3.37162, -17.5848, -0.
 [node name="Shovel" groups=["tool"] instance=ExtResource("1_d01uh")]
 collision_layer = 2
 collision_mask = 2
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0, -0.76)
 script = ExtResource("2_081d1")
 
 [node name="Empty" parent="." index="0"]
@@ -24,3 +26,6 @@ shape = SubResource("ConvexPolygonShape3D_081d1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(0.065, 0, 0, 0, -2.84124e-09, -0.065, 0, 0.065, -2.84124e-09, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_g60nu")
+
+[node name="Node3D" type="Node3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.760382)

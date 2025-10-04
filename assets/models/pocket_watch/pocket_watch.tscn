@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b17smfjvy2ql8"]
+
+[ext_resource type="PackedScene" uid="uid://ct8ln64vvx31h" path="res://assets/models/pocket_watch/pocket_watch.glb" id="1_mjrp0"]
+[ext_resource type="Script" uid="uid://t4g13cr70k5y" path="res://scripts/artifact.gd" id="2_55g6g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55g6g"]
+albedo_color = Color(0.630188, 0.414323, 0.101843, 1)
+metallic = 1.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_55g6g"]
+points = PackedVector3Array(-1.78888e-05, -4.08888e-05, 0.199961, -0.0646332, -4.08888e-05, 0.141386, -0.0457192, -0.141457, 0.0999608, -1.78888e-05, -0.141457, 0.141386, 0.0646153, -4.08888e-05, 0.141386, -1.78888e-05, 0.141375, 0.141386, -0.0457192, 0.141375, 0.0999608, -0.0914027, -4.08888e-05, -3.91454e-05, -0.0646332, -0.141457, -3.91454e-05, -1.78888e-05, -0.2, -3.91454e-05, 0.0456835, -0.141457, 0.0999608, 0.0456835, 0.141375, 0.0999608, 0.0914027, -4.08888e-05, -3.91454e-05, -1.78888e-05, 0.280768, 0.023845, -0.0646332, 0.141375, -3.91454e-05, -0.00771232, 0.280768, 0.0168363, -0.0109153, 0.280768, -3.91454e-05, -0.0646332, -4.08888e-05, -0.141425, -0.0457192, -0.141457, -0.100039, -0.0457192, 0.141375, -0.100039, -1.78888e-05, -0.141457, -0.141425, 0.0456835, -0.141457, -0.100039, 0.0646153, -0.141457, -3.91454e-05, 0.0646153, 0.141375, -3.91454e-05, 0.0108975, 0.280768, -3.91454e-05, 0.00769444, 0.280768, 0.0168363, 0.0646153, -4.08888e-05, -0.141425, 0.0456835, 0.141375, -0.100039, -0.00771232, 0.280768, -0.0168755, -1.78888e-05, -4.08888e-05, -0.2, -1.78888e-05, 0.141375, -0.141425, -1.78888e-05, 0.280768, -0.0238841, 0.00769444, 0.280768, -0.0168755)
+
+[node name="PocketWatch" groups=["artifact"] instance=ExtResource("1_mjrp0")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_55g6g")
+artifact_name = "Pocket Watch"
+value = 10.0
+
+[node name="PocketWatch" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_55g6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_55g6g")

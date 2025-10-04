@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1202c1marm7n"]
+
+[ext_resource type="PackedScene" uid="uid://ct8ln64vvx31h" path="res://assets/models/pocket_watch/pocket_watch.glb" id="1_mjrp0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hljj"]
+albedo_color = Color(0.419608, 0.419608, 0.282353, 1)
+
+[node name="pocket_watch" instance=ExtResource("1_mjrp0")]
+
+[node name="PocketWatch" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1hljj")

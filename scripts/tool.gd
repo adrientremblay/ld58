@@ -3,6 +3,9 @@ class_name Tool extends RigidBody3D
 # TODO A lot of copied code here from the artifact class
 # TODO This should probably be refactored into a dragabble component
 
+# Children
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 # Constants
 var UP_FORCE = 2.5 # The constant number used for the y axis when being dragged so that the artifact goes up
 var Y_CAP = 1 # The max Y position to apply the upward force to
@@ -13,13 +16,14 @@ var dragging = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and dragging:
 		dragging = false
+		animation_player.play("dig")
 
 func _physics_process(delta: float) -> void:
 	if not dragging:
 		return
 		
 	# Tools should always points forward when being held
-	look_at(Vector3.FORWARD)
+	#look_at(Vector3.FORWARD)
 	
 	var grave_camera = get_viewport().get_camera_3d()
 	

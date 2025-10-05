@@ -21,12 +21,14 @@ const ARTIFACT_DATA = {
 	ArtifactName.POCKET_WATCH: {
 		"name": "Pocket Watch",
 		"value": 5.0,
-		"rarity": Rarity.COMMON
+		"rarity": Rarity.COMMON,
+		"effect": "Increases dig speed by 5%"
 	},
 	ArtifactName.GOLD_RING: {
 		"name": "Gold Ring",
 		"value": 25.0,
-		"rarity": Rarity.RARE
+		"rarity": Rarity.RARE,
+		"effect": "Increases likelihood of rare items spawning by 5%"
 	}
 }
 

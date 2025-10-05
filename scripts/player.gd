@@ -19,6 +19,7 @@ const STAMINA_DRAIN = 25.0
 var looking_in_grave # indicates that the player is actively looking into a grave
 var stamina :float = 100.0
 var sprinting: bool = false
+var looking_at_collection: bool = false
 
 # Signals
 signal die
@@ -27,7 +28,7 @@ signal player_can_interact(interact_message: String)
 signal player_can_no_longer_interact
 
 func _unhandled_input(event: InputEvent):
-	if looking_in_grave:
+	if looking_in_grave or looking_at_collection:
 		return
 	
 	if event is InputEventMouseButton:
@@ -64,7 +65,7 @@ func _physics_process(delta: float) -> void:
 		stamina += delta * STAMINA_DRAIN
 		stamina = min(100.0, stamina)
 	
-	if not looking_in_grave:	
+	if not looking_in_grave and not looking_at_collection:	
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
@@ -90,6 +91,8 @@ func _input(event: InputEvent) -> void:
 				player_can_no_longer_interact.emit()
 			elif area.is_in_group("gate"):
 				leave.emit()
+	if event.is_action_pressed("collection"):
+		looking_at_collection = not looking_at_collection
 	if event.is_action_pressed("sprint") and stamina > 0.0:
 		sprinting = true
 	if event.is_action_released("sprint"):

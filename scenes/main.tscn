@@ -293,7 +293,7 @@ autoplay = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0972, 0.563326, 11.2791)
 
 [node name="Collection" parent="." instance=ExtResource("12_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.7173, 1.93773, 6.37932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.765, 0, 6.379)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]

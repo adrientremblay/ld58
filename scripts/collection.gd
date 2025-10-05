@@ -4,7 +4,7 @@ extends Node3D
 @onready var collection_camera: Camera3D = $Camera3D
 
 # Properties
-var collection_active: bool = true
+var collection_active: bool = false
 
 # Constants
 const RAY_LENGTH = 500
@@ -12,6 +12,15 @@ const RAY_LENGTH = 500
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and collection_active:
 		pickup_item()
+	if event.is_action_pressed("collection"):
+		if collection_active:
+			collection_active = false
+			collection_camera.current = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			collection_active = true
+			collection_camera.current = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 # TODO get this working
 func _unhandled_input(event: InputEvent) -> void:

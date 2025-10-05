@@ -25,7 +25,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
-size = Vector3(135.038, 1, 103.438)
+size = Vector3(157.517, 1, 120.316)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
 albedo_color = Color(0.18894, 0.276046, 0.0938407, 1)
@@ -46,12 +46,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57026, 8.01735)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550577, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.873196, -0.516482, -9.98123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1127, -0.516482, -18.4201)
 shape = SubResource("BoxShape3D_o5qli")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="Grass" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3719, 0, -17.3098)
 size = Vector3(156.617, 1, 118.309)
 material = SubResource("StandardMaterial3D_jyhfs")
@@ -64,6 +64,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845984, -0.106132, 2.67804)
 
 [node name="Grave3" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27652, -0.106132, 2.67804)
+
+[node name="Grave4" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.68676, -0.106132, 9.80461)
+
+[node name="Grave5" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.845984, -0.106132, 9.80461)
+
+[node name="Grave6" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.27652, -0.106132, 9.80461)
+
+[node name="Hill" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 100.383, 0, 42.7533)
+polygon = PackedVector2Array(0, 0, 0, 6.5, 1, 0.5, 1, 0)
+depth = 170.0
+material = SubResource("StandardMaterial3D_jyhfs")
+
+[node name="Hill2" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.995, 0, 45.9378)
+polygon = PackedVector2Array(0, 0, 0, 6.5, 1, 0.5, 1, 0)
+depth = 150.0
+material = SubResource("StandardMaterial3D_jyhfs")
+
+[node name="Hill4" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.4381, 0, -94.7371)
+polygon = PackedVector2Array(0, 0, 0, 6.5, 1, 0.5, 1, 0)
+depth = 150.0
+material = SubResource("StandardMaterial3D_jyhfs")
+
+[node name="Hill3" type="CSGPolygon3D" parent="CSGCombiner3D"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -66.7284, 0, -77.4228)
+polygon = PackedVector2Array(0, 0, 0, 6.5, 1, 0.5, 1, 0)
+depth = 170.0
+material = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -122,3 +155,9 @@ stream = ExtResource("5_tbgi4")
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave2" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave3" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave3" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave4" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave4" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave5" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave5" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave6" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave6" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

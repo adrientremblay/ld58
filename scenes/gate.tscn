@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://1ravjgictgvt"]
+
+[ext_resource type="PackedScene" uid="uid://bfgbo5sovomm6" path="res://assets/models/gate/gate.glb" id="1_xfvdi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfvdi"]
+albedo_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwxio"]
+albedo_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hudsw"]
+albedo_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wi8tm"]
+albedo_color = Color(0.276589, 0.350438, 0.344966, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfvdi"]
+size = Vector3(10.87, 5.18579, 0.905762)
+
+[node name="gate" instance=ExtResource("1_xfvdi")]
+
+[node name="Fences" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xfvdi")
+
+[node name="GateLeft" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xwxio")
+
+[node name="GateLeft_001" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hudsw")
+
+[node name="Pillars" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wi8tm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3672, 2.5365, -0.0227051)
+shape = SubResource("BoxShape3D_xfvdi")

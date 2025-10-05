@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=19 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dg1lbpwaiyw8p" path="res://scenes/groundskeeper.tscn" id="8_tipki"]
 [ext_resource type="Script" uid="uid://l00v1ujl0iu5" path="res://scripts/patrol_node.gd" id="9_85g3d"]
 [ext_resource type="AudioStream" uid="uid://ds0586vuunbye" path="res://assets/audio/night_ambience.mp3" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://1ravjgictgvt" path="res://scenes/gate.tscn" id="11_ya4ey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -48,7 +49,7 @@ script = ExtResource("1_sugp2")
 environment = SubResource("Environment_tbgi4")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57026, 8.01735)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28.2808, 1.57026, 5.85333)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550577, 0)
@@ -264,6 +265,9 @@ next = NodePath("../Node3D3")
 stream = ExtResource("10_choun")
 volume_db = -5.0
 autoplay = true
+
+[node name="gate" parent="." instance=ExtResource("11_ya4ey")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0972, 0.563326, 11.2791)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]

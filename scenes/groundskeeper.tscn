@@ -34,3 +34,8 @@ omni_range = 2.37333
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13732, 0)
 shape = SubResource("CapsuleShape3D_pis34")
+
+[node name="IdleTimer" type="Timer" parent="." index="3"]
+wait_time = 5.0
+
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

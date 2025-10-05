@@ -59,23 +59,23 @@ _data = {
 script = ExtResource("2_8sy0d")
 
 [node name="Skeleton3D" parent="ComponentArmature" index="0"]
-bones/0/position = Vector3(0, -1.15347, 0.0934316)
+bones/0/position = Vector3(0, -1.14847, 0.0934316)
 bones/3/rotation = Quaternion(0.253401, 0, 0, 0.967361)
 bones/4/rotation = Quaternion(0.0340333, 0.00158765, 0.817032, 0.575585)
-bones/5/rotation = Quaternion(0.0411204, 0.0368675, 0.41007, 0.91038)
+bones/5/rotation = Quaternion(0.0969893, 0.0949289, 0.400944, 0.905994)
 bones/6/rotation = Quaternion(0.0103674, 0.000564867, 0.155036, 0.987854)
 bones/8/rotation = Quaternion(-0.485851, -0.250263, -0.206079, 0.811695)
 bones/9/rotation = Quaternion(-0.244876, -0.181234, 0.326285, 0.894834)
 bones/10/rotation = Quaternion(-0.00188639, 0.00165858, -0.687773, 0.725922)
-bones/12/position = Vector3(3.5532e-08, -1.15347, 0.0934316)
-bones/12/rotation = Quaternion(0.707088, 0.183289, 0.682939, -0.00513965)
-bones/13/rotation = Quaternion(-0.12911, 0.00928582, 0.0660322, 0.989386)
-bones/14/position = Vector3(-1.1389e-08, -1.15347, 0.0934316)
-bones/14/rotation = Quaternion(-0.531323, -0.27741, 0.650418, 0.466578)
-bones/15/rotation = Quaternion(-0.0986841, 0.121924, 0.786091, 0.597877)
+bones/12/position = Vector3(3.09554e-08, -1.14847, 0.0934316)
+bones/12/rotation = Quaternion(0.70678, 0.208888, 0.675549, 0.0215034)
+bones/13/rotation = Quaternion(-0.129069, -0.00991562, -0.0705091, 0.989076)
+bones/14/position = Vector3(-1.06237e-08, -1.14847, 0.0934316)
+bones/14/rotation = Quaternion(-0.617966, -0.133609, 0.694369, 0.343683)
+bones/15/rotation = Quaternion(-0.158129, 0.0366564, 0.236339, 0.958017)
 
 [node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.21196, -0.555654)
+transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.20696, -0.555654)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
 light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)

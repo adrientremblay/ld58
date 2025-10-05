@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=18 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://br61h7lwo7wf1" path="res://scenes/fence_corner.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dg1lbpwaiyw8p" path="res://scenes/groundskeeper.tscn" id="8_tipki"]
 [ext_resource type="Script" uid="uid://l00v1ujl0iu5" path="res://scripts/patrol_node.gd" id="9_85g3d"]
+[ext_resource type="AudioStream" uid="uid://ds0586vuunbye" path="res://assets/audio/night_ambience.mp3" id="10_choun"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -257,6 +258,11 @@ next = NodePath("../Node3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8976, 0, 28.0397)
 script = ExtResource("9_85g3d")
 next = NodePath("../Node3D3")
+
+[node name="NightAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_choun")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

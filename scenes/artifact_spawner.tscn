@@ -18,3 +18,11 @@ texture = ExtResource("1_cg811")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00814819, 0.345154, 0.00610352)
 shape = SubResource("BoxShape3D_8ljor")
+
+[node name="ArtifactNameLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.527274)
+text = "item name"
+
+[node name="QuantityLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.760681)
+text = "x100"

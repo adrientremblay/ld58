@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://mdwsrivqmi5j"]
+[gd_scene load_steps=5 format=3 uid="uid://mdwsrivqmi5j"]
 
 [ext_resource type="Script" uid="uid://dw6rqarheryem" path="res://scripts/collection.gd" id="1_eqlcu"]
-[ext_resource type="PackedScene" uid="uid://b17smfjvy2ql8" path="res://assets/models/pocket_watch/pocket_watch.tscn" id="1_mldy4"]
 [ext_resource type="PackedScene" uid="uid://86h7rakhb615" path="res://scenes/artifact_spawner.tscn" id="3_akiqc"]
 [ext_resource type="PackedScene" uid="uid://d0662ui43pq8" path="res://scenes/artifact_slot.tscn" id="3_m8hiy"]
 
@@ -44,4 +43,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36754, 0, -1.42639)
 
 [node name="ArtifactSpawner" parent="." instance=ExtResource("3_akiqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21758, -0.0224609, 1.01907)
-spawn_artifact_scene = ExtResource("1_mldy4")

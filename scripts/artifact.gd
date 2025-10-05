@@ -1,9 +1,10 @@
 class_name Artifact extends RigidBody3D
 
 # Enums
-#enum ArtifactName {
-#	POCKET_WATCH
-#}
+enum ArtifactName {
+	POCKET_WATCH,
+	GOLD_RING
+}
 
 # Constants
 var UP_FORCE = 2.5 # The constant number used for the y axis when being dragged so that the artifact goes up

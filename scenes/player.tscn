@@ -60,6 +60,7 @@ shape = SubResource("CylinderShape3D_3vyb7")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.40144)
+light_color = Color(0.953197, 0.839577, 1.54018e-06, 1)
 omni_range = 3.93338
 
 [node name="FootstepAnimationPlayer" type="AnimationPlayer" parent="."]

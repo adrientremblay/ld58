@@ -66,7 +66,7 @@ shape = SubResource("CylinderShape3D_qe13i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52817, 1.45503, 0.280374)
 
 [node name="mound_full" parent="." instance=ExtResource("7_aulm7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621929, 0.00140449)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622, 0.008)
 
 [node name="ShovelSpawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5742, 1.0683, -0.210546)

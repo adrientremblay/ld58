@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=16 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://p5j1uwjic7gm" path="res://scenes/shovel.tscn" id="6_e7cip"]
 [ext_resource type="PackedScene" uid="uid://bb8i4gi2owcyi" path="res://scenes/mound_full.tscn" id="7_aulm7"]
 [ext_resource type="PackedScene" uid="uid://dkp2p6hb7ok6" path="res://scenes/coffin.tscn" id="9_u8mm0"]
+[ext_resource type="PackedScene" uid="uid://br6ukq2icfqo7" path="res://scenes/ring.tscn" id="10_q8ail"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mlivn"]
 size = Vector3(1.68649, 2.08386, 3.66162)
@@ -103,6 +104,9 @@ shape = SubResource("BoxShape3D_7om2q")
 
 [node name="Coffin" parent="." instance=ExtResource("9_u8mm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0120309, -0.561859, 0.00241645)
+
+[node name="ring" parent="." instance=ExtResource("10_q8ail")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199312, -0.499359, 0.124752)
 
 [connection signal="body_entered" from="SackDetectionArea" to="." method="_on_sack_detection_area_body_entered"]
 [connection signal="fully_uncovered" from="mound_full" to="Coffin" method="_on_mound_full_fully_uncovered"]

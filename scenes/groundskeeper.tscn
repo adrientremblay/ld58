@@ -1,11 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg1lbpwaiyw8p"]
+[gd_scene load_steps=13 format=3 uid="uid://dg1lbpwaiyw8p"]
 
 [ext_resource type="PackedScene" uid="uid://fl8w6k3eluok" path="res://assets/models/groundskeeper/groundskeeper.glb" id="1_pis34"]
 [ext_resource type="Script" uid="uid://ce07v28ds7827" path="res://scripts/groundskeeper.gd" id="2_8sy0d"]
+[ext_resource type="AudioStream" uid="uid://08l3eqv1po54" path="res://assets/audio/footsteps/1.mp3" id="3_qad6w"]
+[ext_resource type="AudioStream" uid="uid://cw4dt8wo5xb2v" path="res://assets/audio/footsteps/2.mp3" id="4_5vgus"]
+[ext_resource type="AudioStream" uid="uid://dkce72cjh40ol" path="res://assets/audio/footsteps/3.mp3" id="5_7qw6t"]
+[ext_resource type="AudioStream" uid="uid://ch4otqw7xretf" path="res://assets/audio/footsteps/4.mp3" id="6_p57dv"]
+[ext_resource type="AudioStream" uid="uid://c7qmh4mty72ij" path="res://assets/audio/footsteps/5.mp3" id="7_82ypu"]
+[ext_resource type="AudioStream" uid="uid://irlsfjrwioj5" path="res://assets/audio/footsteps/6.mp3" id="8_qh25g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pis34"]
 radius = 0.352791
 height = 2.27335
+
+[sub_resource type="Animation" id="Animation_fjrip"]
+resource_name = "walk"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random_footstep"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qad6w"]
+resource_name = "walk_slow"
+length = 1.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random_footstep"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smehm"]
+_data = {
+&"walk": SubResource("Animation_fjrip"),
+&"walk_slow": SubResource("Animation_qad6w")
+}
 
 [node name="Groundskeeper" instance=ExtResource("1_pis34")]
 script = ExtResource("2_8sy0d")
@@ -37,5 +85,36 @@ shape = SubResource("CapsuleShape3D_pis34")
 
 [node name="IdleTimer" type="Timer" parent="." index="3"]
 wait_time = 5.0
+
+[node name="FootstepAnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_smehm")
+}
+
+[node name="FootstepSounds" type="Node3D" parent="." index="5"]
+
+[node name="1" type="AudioStreamPlayer3D" parent="FootstepSounds" index="0"]
+stream = ExtResource("3_qad6w")
+volume_db = -10.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="FootstepSounds" index="1"]
+stream = ExtResource("4_5vgus")
+volume_db = -10.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="FootstepSounds" index="2"]
+stream = ExtResource("5_7qw6t")
+volume_db = -10.0
+
+[node name="4" type="AudioStreamPlayer3D" parent="FootstepSounds" index="3"]
+stream = ExtResource("6_p57dv")
+volume_db = -10.0
+
+[node name="5" type="AudioStreamPlayer3D" parent="FootstepSounds" index="4"]
+stream = ExtResource("7_82ypu")
+volume_db = -10.0
+
+[node name="6" type="AudioStreamPlayer3D" parent="FootstepSounds" index="5"]
+stream = ExtResource("8_qh25g")
+volume_db = -10.0
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

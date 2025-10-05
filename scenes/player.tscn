@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://gt84xvj50yhs"]
+[gd_scene load_steps=14 format=3 uid="uid://gt84xvj50yhs"]
 
 [ext_resource type="Script" uid="uid://bkkmit0k68hvc" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="AudioStream" uid="uid://08l3eqv1po54" path="res://assets/audio/footsteps/1.mp3" id="2_fjrip"]
@@ -34,9 +34,28 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_qad6w"]
+resource_name = "walk_slow"
+length = 1.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random_footstep"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_smehm"]
 _data = {
-&"walk": SubResource("Animation_fjrip")
+&"walk": SubResource("Animation_fjrip"),
+&"walk_slow": SubResource("Animation_qad6w")
 }
 
 [node name="Player" type="CharacterBody3D"]

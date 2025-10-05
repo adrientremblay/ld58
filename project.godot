@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/sc
 grave=""
 artifact=""
 tool=""
+player=""
 
 [input]
 

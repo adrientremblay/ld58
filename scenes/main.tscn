@@ -233,9 +233,10 @@ text = "Value: 12.0$"
 [node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource("5_tbgi4")
 
-[node name="Groundskeeper" parent="." node_paths=PackedStringArray("patrol_node") instance=ExtResource("8_tipki")]
+[node name="Groundskeeper" parent="." node_paths=PackedStringArray("patrol_node", "player") instance=ExtResource("8_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8896, 0.52997, 5.94705)
 patrol_node = NodePath("../PatrolNodes/Node3D")
+player = NodePath("../Player")
 
 [node name="PatrolNodes" type="Node3D" parent="."]
 

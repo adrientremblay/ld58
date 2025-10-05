@@ -4,6 +4,7 @@ extends Control
 @onready var money_label: Label = $AnchorTopRight/VBoxContainer/MoneyLabel
 @onready var artifact_panel: PanelContainer = $ArtifactPanel
 @onready var interact_label: Label = $MarginBottom/InteractLabel
+@onready var rarity_label: Label = $ArtifactPanel/VBoxContainer/HBoxContainer/RarityLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 
 func update_money_label(money: float):
 	# calculate the value
-	money_label.text = "Money: " + str(money) + "$"
+	money_label.text = "Collection Value: " + str(money) + "$"
 	$SellArtifactSound.play()
 
 func _on_grave_move_artifact_label_to_cursor(artifact: Artifact) -> void:
@@ -32,6 +33,17 @@ func _on_grave_move_artifact_label_to_cursor(artifact: Artifact) -> void:
 func fill_artifact_container(artifact: Artifact):
 	$ArtifactPanel/VBoxContainer/NameLabel.text = artifact.artifact_name
 	$ArtifactPanel/VBoxContainer/ValueLabel.text = "Collection Value: " + str(artifact.value) + "$"
+	
+	match artifact.rarity:
+		Artifact.Rarity.COMMON:
+			rarity_label.text = "Common"
+			rarity_label.label_settings.font_color = Color.WHITE
+		Artifact.Rarity.UNCOMMON:
+			rarity_label.text = "Uncommon"
+			rarity_label.label_settings.font_color = Color.LIGHT_GREEN
+		Artifact.Rarity.RARE:
+			rarity_label.text = "Rare"
+			rarity_label.label_settings.font_color = Color.TOMATO
 
 func _on_player_player_can_interact(interact_message: String) -> void:
 	interact_label.text = interact_message

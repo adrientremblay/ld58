@@ -6,6 +6,12 @@ enum ArtifactName {
 	GOLD_RING
 }
 
+enum Rarity {
+	COMMON,
+	UNCOMMON,
+	RARE
+}
+
 # Constants
 var UP_FORCE = 2.5 # The constant number used for the y axis when being dragged so that the artifact goes up
 var Y_CAP = 1 # The max Y position to apply the upward force to
@@ -23,6 +29,7 @@ var dragging = false
 @export var artifact_name: String
 @export var value: float
 @export var artifact_type: ArtifactName
+@export var rarity: Rarity
 
 #func _ready() -> void:
 	# Populate data properties

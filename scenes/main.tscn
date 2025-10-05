@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=22 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -42,6 +42,8 @@ albedo_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_eb6dy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ya4ey"]
 font_size = 20
@@ -234,6 +236,18 @@ text = "name"
 [node name="ValueLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer"]
 layout_mode = 2
 text = "Value: 12.0$"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/ArtifactPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/ArtifactPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Rarity: "
+
+[node name="RarityLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Common"
+label_settings = SubResource("LabelSettings_eb6dy")
 
 [node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource("5_tbgi4")

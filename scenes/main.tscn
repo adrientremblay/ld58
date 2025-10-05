@@ -12,7 +12,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
-size = Vector3(43.2847, 1, 56.0139)
+size = Vector3(135.038, 1, 103.438)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
 albedo_color = Color(0.2948, 0.44, 0.176, 1)
@@ -33,14 +33,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57026, 8.01735)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550577, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39194, -0.516482, -4.53723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.873196, -0.516482, -9.98123)
 shape = SubResource("BoxShape3D_o5qli")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12538, 0, 1.93936)
-size = Vector3(23.6048, 1, 20.2363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3719, 0, -17.3098)
+size = Vector3(156.617, 1, 118.309)
 material = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="Grave" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]

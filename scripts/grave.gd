@@ -107,8 +107,12 @@ func spawn_artifacts() -> void:
 	var indexes_order = range(0, artifact_spawns.size()-1) # indexes to spawn stuff in
 	indexes_order.shuffle() # randomize the list
 	
-	# spawn a pocket watch
-	artifact_spawns[indexes_order[0]].add_child(pocket_watch_scene.instantiate())
+	var current_index = 0
 	
-	# spawn a ring
-	artifact_spawns[indexes_order[1]].add_child(ring_scene.instantiate())
+	# try and spawn pocket watch
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity]:
+		artifact_spawns[indexes_order[0]].add_child(pocket_watch_scene.instantiate())
+	
+	# try and spawn a ring
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity]:
+		artifact_spawns[indexes_order[1]].add_child(ring_scene.instantiate())

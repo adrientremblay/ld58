@@ -35,13 +35,13 @@ func fill_artifact_container(artifact: Artifact):
 	$ArtifactPanel/VBoxContainer/ValueLabel.text = "Collection Value: " + str(artifact.value) + "$"
 	
 	match artifact.rarity:
-		Artifact.Rarity.COMMON:
+		Global.Rarity.COMMON:
 			rarity_label.text = "Common"
 			rarity_label.label_settings.font_color = Color.WHITE
-		Artifact.Rarity.UNCOMMON:
+		Global.Rarity.UNCOMMON:
 			rarity_label.text = "Uncommon"
 			rarity_label.label_settings.font_color = Color.LIGHT_GREEN
-		Artifact.Rarity.RARE:
+		Global.Rarity.RARE:
 			rarity_label.text = "Rare"
 			rarity_label.label_settings.font_color = Color.TOMATO
 

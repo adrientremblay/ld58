@@ -67,7 +67,7 @@ func pickup_item():
 			var artifact: Artifact = result.collider
 			artifact.dragging = true
 
-func add_to_collection(artifact_type: Artifact.ArtifactName):
+func add_to_collection(artifact_type: Global.ArtifactName):
 	for artifact_spawner: ArtifactSpawner in artifact_spawners:
 		if artifact_spawner.artifact_type == artifact_type:
 			artifact_spawner.increment_stock()

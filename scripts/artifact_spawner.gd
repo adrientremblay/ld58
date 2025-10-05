@@ -9,7 +9,7 @@ class_name ArtifactSpawner extends Area3D
 @onready var quantity_label: Label3D = $QuantityLabel
 
 # Exports
-@export var artifact_type: Artifact.ArtifactName
+@export var artifact_type: Global.ArtifactName
 
 # Properties
 var spawn_artifact_scene: PackedScene
@@ -18,11 +18,11 @@ var stock: int = 0
 
 func _ready() -> void:
 	match artifact_type:
-		Artifact.ArtifactName.POCKET_WATCH:
+		Global.ArtifactName.POCKET_WATCH:
 			spawn_artifact_scene = pocket_watch_scene
 			artifact_name_label.text = "Pocket Watch"
 	match artifact_type:
-		Artifact.ArtifactName.GOLD_RING:
+		Global.ArtifactName.GOLD_RING:
 			spawn_artifact_scene = gold_ring
 			artifact_name_label.text = "Gold Ring"
 	

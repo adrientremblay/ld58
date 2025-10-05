@@ -16,10 +16,7 @@ size = Vector3(0.0463867, 0.158569, 0.135742)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_f7lrs")
-artifact_name = "Ruby Ring"
-value = 30.0
 artifact_type = 1
-rarity = 1
 
 [node name="Ring" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_03kdj")

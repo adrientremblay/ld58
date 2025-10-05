@@ -14,8 +14,6 @@ points = PackedVector3Array(-1.78888e-05, -4.08888e-05, 0.199961, -0.0646332, -4
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_55g6g")
-artifact_name = "Pocket Watch"
-value = 10.0
 
 [node name="PocketWatch" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_55g6g")

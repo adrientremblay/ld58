@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://mdwsrivqmi5j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eeu2d"]
+size = Vector3(11.9337, 0.477539, 9.16559)
+
+[node name="Collection" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.13508, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382385, -0.26123, -1.35416)
+shape = SubResource("BoxShape3D_eeu2d")

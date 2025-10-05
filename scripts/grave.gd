@@ -5,12 +5,17 @@ class_name Grave extends CSGBox3D
 @onready var sack_model = $SackModel
 @onready var shovel = $Shovel
 @onready var shovel_spawn = $ShovelSpawn
+@onready var artifact_spawns_node: Node3D = $ArtifactSpawns
+
+# Artifact scenes
+@onready var pocket_watch_scene: PackedScene = preload("res://assets/models/pocket_watch/pocket_watch.tscn")
+@onready var ring_scene: PackedScene = preload("res://scenes/ring.tscn")
 
 # Properties
 var grave_active = false
 
 # Constants
-var RAY_LENGTH = 500
+const RAY_LENGTH = 500
 
 # Signals
 signal collect_artifact(artifact: Artifact)
@@ -19,6 +24,7 @@ signal move_artifact_label_to_cursor(artifact: Artifact)
 func _ready() -> void:
 	sack_model.visible = false
 	shovel.visible = false
+	spawn_artifacts()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and grave_active:
@@ -94,3 +100,14 @@ func shoot_ray() -> Dictionary:
 	# Casting the ray
 	var result = space.intersect_ray(query)
 	return result
+
+func spawn_artifacts() -> void:
+	var artifact_spawns: Array[Node] = artifact_spawns_node.get_children()
+	var indexes_order = range(0, artifact_spawns.size()-1) # indexes to spawn stuff in
+	indexes_order.shuffle() # randomize the list
+	
+	# spawn a pocket watch
+	artifact_spawns[indexes_order[0]].add_child(pocket_watch_scene.instantiate())
+	
+	# spawn a ring
+	artifact_spawns[indexes_order[1]].add_child(ring_scene.instantiate())

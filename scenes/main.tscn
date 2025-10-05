@@ -292,8 +292,9 @@ autoplay = true
 [node name="gate" parent="." instance=ExtResource("11_ya4ey")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0972, 0.563326, 11.2791)
 
-[node name="Collection" parent="." instance=ExtResource("12_eb6dy")]
+[node name="Collection" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.765, 0, 6.379)
+player = NodePath("../Player")
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]

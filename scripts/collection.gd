@@ -10,10 +10,14 @@ var collection_active: bool = false
 # Constants
 const RAY_LENGTH = 500
 
+# TODO: This is silly
+# Exports
+@export var player: Player
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and collection_active:
 		pickup_item()
-	if event.is_action_pressed("collection"):
+	if event.is_action_pressed("collection") and not player.looking_in_grave:
 		if collection_active:
 			collection_active = false
 			collection_camera.current = false

@@ -91,7 +91,7 @@ func _input(event: InputEvent) -> void:
 				player_can_no_longer_interact.emit()
 			elif area.is_in_group("gate"):
 				leave.emit()
-	if event.is_action_pressed("collection"):
+	if event.is_action_pressed("collection") and not looking_in_grave:
 		looking_at_collection = not looking_at_collection
 	if event.is_action_pressed("sprint") and stamina > 0.0:
 		sprinting = true

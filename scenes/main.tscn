@@ -215,7 +215,7 @@ layout_mode = 2
 
 [node name="MoneyLabel" type="Label" parent="HUD/AnchorTopRight/VBoxContainer"]
 layout_mode = 2
-text = "Valuables: 0.0$"
+text = "Collection Value: 0.0$"
 label_settings = SubResource("LabelSettings_0wfyh")
 
 [node name="ArtifactPanel" type="PanelContainer" parent="HUD"]

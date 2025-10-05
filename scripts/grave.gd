@@ -6,6 +6,7 @@ class_name Grave extends CSGBox3D
 @onready var shovel = $Shovel
 @onready var shovel_spawn = $ShovelSpawn
 @onready var artifact_spawns_node: Node3D = $ArtifactSpawns
+@onready var player_stand_position: Node3D = $PlayerStandPosition
 
 # Artifact scenes
 @onready var pocket_watch_scene: PackedScene = preload("res://assets/models/pocket_watch/pocket_watch.tscn")

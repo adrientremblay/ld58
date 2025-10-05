@@ -103,7 +103,11 @@ func toggle_looking_in_grave(grave: Grave) -> void:
 	if looking_in_grave:
 		camera.current = false
 		grave.activate()
-		
+		# stand in front of and look at grave
+		global_position = grave.player_stand_position.global_position
+		var direction_to_grave: Vector3 = grave.global_position - global_position
+		direction_to_grave.y = 0
+		look_at(global_position + direction_to_grave.normalized())
 	else:
 		camera.current = true
 		grave.disactivate()

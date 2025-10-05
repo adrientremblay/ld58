@@ -36,6 +36,7 @@ artifact=""
 tool=""
 player=""
 groundskeeper=""
+gate=""
 
 [input]
 

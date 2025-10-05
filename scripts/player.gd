@@ -22,6 +22,7 @@ var sprinting: bool = false
 
 # Signals
 signal die
+signal leave
 signal player_can_interact(interact_message: String)
 signal player_can_no_longer_interact
 
@@ -87,6 +88,8 @@ func _input(event: InputEvent) -> void:
 				var grave_interaction_area: GraveInteractionArea = area
 				toggle_looking_in_grave(grave_interaction_area.grave)
 				player_can_no_longer_interact.emit()
+			elif area.is_in_group("gate"):
+				leave.emit()
 	if event.is_action_pressed("sprint") and stamina > 0.0:
 		sprinting = true
 	if event.is_action_released("sprint"):
@@ -114,6 +117,8 @@ func _on_kill_zone_body_entered(body: Node3D) -> void:
 func _on_player_interaction_area_area_entered(area: Area3D) -> void:
 	if area.is_in_group("grave"):
 		player_can_interact.emit("Press E to Desecrate Grave")
+	elif area.is_in_group("gate"):
+		player_can_interact.emit("Press E to Leave With Pillaged Loot")
 
 func _on_player_interaction_area_area_exited(area: Area3D) -> void:
 	if area.is_in_group("grave"):

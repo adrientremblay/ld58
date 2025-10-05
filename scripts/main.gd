@@ -4,7 +4,7 @@ extends Node3D
 @onready var hud = $HUD
 
 # Properties
-var money = 20
+var money = 0
 
 func _ready() -> void:
 	pass
@@ -19,5 +19,15 @@ func end_game() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
+func win_game() -> void:
+	Global.score = money
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Global.survived = true
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+
+
 func _on_player_die() -> void:
 	end_game()
+
+func _on_player_leave() -> void:
+	win_game()

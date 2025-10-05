@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://byhlaw4061qie"]
+[gd_scene load_steps=5 format=3 uid="uid://byhlaw4061qie"]
+
+[ext_resource type="Script" uid="uid://cjsccuvtipnkk" path="res://scripts/end_screen.gd" id="1_kq7ac"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pddrx"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pddrx")
+script = ExtResource("1_kq7ac")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

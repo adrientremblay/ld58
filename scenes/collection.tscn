@@ -42,4 +42,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03592, 0, -1.42639)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36754, 0, -1.42639)
 
 [node name="ArtifactSpawner" parent="." instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21758, -0.0224609, 1.01907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36907, -0.0224609, 1.01907)

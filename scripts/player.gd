@@ -6,6 +6,7 @@ const SPRINT_MULTIPLIER = 1.4
 const JUMP_VELOCITY = 4.5
 const CAMERA_MAX_ANGLE = 80
 const CAMERA_MIN_ANGLE = -80
+const STAMINA_DRAIN = 20.0
 
 # Children
 @onready var camera: Camera3D = $Camera3D
@@ -15,6 +16,8 @@ const CAMERA_MIN_ANGLE = -80
 
 # Properties
 var looking_in_grave # indicates that the player is actively looking into a grave
+var stamina :float = 100.0
+var sprinting: bool = false
 
 func _unhandled_input(event: InputEvent):
 	if looking_in_grave:
@@ -42,8 +45,17 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# TODO As good practice, you should replace UI actions with custom gameplay actions.
 	var final_speed = SPEED
-	if Input.is_action_pressed("sprint"):
-		final_speed *= SPRINT_MULTIPLIER
+	if sprinting:
+		if stamina > 0.0:
+			final_speed *= SPRINT_MULTIPLIER
+			stamina -= delta * STAMINA_DRAIN
+			stamina = max(0.0, stamina)
+		if stamina <= 0.0:
+			sprinting = false
+			Screen.print("stopped sprinting")
+	else:
+		stamina += delta * STAMINA_DRAIN
+		stamina = min(100.0, stamina)
 	
 	if not looking_in_grave:	
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -51,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * final_speed
 			velocity.z = direction.z * final_speed
-			if Input.is_action_pressed("sprint"):
+			if sprinting:
 				footstep_animation_player.play("run")
 			else:
 				footstep_animation_player.play("walk")
@@ -68,6 +80,12 @@ func _input(event: InputEvent) -> void:
 			if area.is_in_group("grave"):
 				var grave_interaction_area: GraveInteractionArea = area
 				toggle_looking_in_grave(grave_interaction_area.grave)
+	if event.is_action_pressed("sprint") and stamina > 0.0:
+		sprinting = true
+		Screen.print("sprinting")
+	if event.is_action_released("sprint"):
+		sprinting = false
+		Screen.print("stopped sprinting")
 
 func toggle_looking_in_grave(grave: Grave) -> void:
 	looking_in_grave = not looking_in_grave

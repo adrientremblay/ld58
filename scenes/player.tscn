@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gt84xvj50yhs"]
+[gd_scene load_steps=16 format=3 uid="uid://gt84xvj50yhs"]
 
 [ext_resource type="Script" uid="uid://bkkmit0k68hvc" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="AudioStream" uid="uid://08l3eqv1po54" path="res://assets/audio/footsteps/1.mp3" id="2_fjrip"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ch4otqw7xretf" path="res://assets/audio/footsteps/4.mp3" id="5_y4r1p"]
 [ext_resource type="AudioStream" uid="uid://c7qmh4mty72ij" path="res://assets/audio/footsteps/5.mp3" id="6_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://irlsfjrwioj5" path="res://assets/audio/footsteps/6.mp3" id="7_3v2ag"]
+[ext_resource type="AudioStream" uid="uid://bpvkbv5h8b0dt" path="res://assets/audio/panting.mp3" id="8_smehm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5qli"]
 
@@ -131,3 +132,6 @@ volume_db = -10.0
 [node name="6" type="AudioStreamPlayer" parent="FootstepSounds"]
 stream = ExtResource("7_3v2ag")
 volume_db = -10.0
+
+[node name="Panting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_smehm")

@@ -6,13 +6,14 @@ const SPRINT_MULTIPLIER = 1.4
 const JUMP_VELOCITY = 4.5
 const CAMERA_MAX_ANGLE = 80
 const CAMERA_MIN_ANGLE = -80
-const STAMINA_DRAIN = 20.0
+const STAMINA_DRAIN = 25.0
 
 # Children
 @onready var camera: Camera3D = $Camera3D
 @onready var player_interaction_area: Area3D = $PlayerInteractionArea
 @onready var footstep_sounds: Node = $FootstepSounds
 @onready var footstep_animation_player: AnimationPlayer = $FootstepAnimationPlayer
+@onready var panting_sound: AudioStreamPlayer = $Panting
 
 # Properties
 var looking_in_grave # indicates that the player is actively looking into a grave
@@ -52,7 +53,7 @@ func _physics_process(delta: float) -> void:
 			stamina = max(0.0, stamina)
 		if stamina <= 0.0:
 			sprinting = false
-			Screen.print("stopped sprinting")
+			panting_sound.play()
 	else:
 		stamina += delta * STAMINA_DRAIN
 		stamina = min(100.0, stamina)
@@ -82,10 +83,8 @@ func _input(event: InputEvent) -> void:
 				toggle_looking_in_grave(grave_interaction_area.grave)
 	if event.is_action_pressed("sprint") and stamina > 0.0:
 		sprinting = true
-		Screen.print("sprinting")
 	if event.is_action_released("sprint"):
 		sprinting = false
-		Screen.print("stopped sprinting")
 
 func toggle_looking_in_grave(grave: Grave) -> void:
 	looking_in_grave = not looking_in_grave

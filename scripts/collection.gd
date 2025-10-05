@@ -1,7 +1,8 @@
-extends Node3D
+class_name Collection extends Node3D
 
 # Children
 @onready var collection_camera: Camera3D = $Camera3D
+@onready var artifact_spawners: Array[Node] = $ArtifactSpawners.get_children()
 
 # Properties
 var collection_active: bool = false
@@ -61,3 +62,8 @@ func pickup_item():
 		if result.collider.is_in_group("artifact"):
 			var artifact: Artifact = result.collider
 			artifact.dragging = true
+
+func add_to_collection(artifact_type: Artifact.ArtifactName):
+	for artifact_spawner: ArtifactSpawner in artifact_spawners:
+		if artifact_spawner.artifact_type == artifact_type:
+			artifact_spawner.increment_stock()

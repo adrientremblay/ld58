@@ -2,6 +2,7 @@ extends Node3D
 
 # Children
 @onready var hud = $HUD
+@onready var collection: Collection = $Collection
 
 # Properties
 var money = 0
@@ -13,6 +14,8 @@ func _on_grave_collect_artifact(artifact: Artifact) -> void:
 	var value = artifact.value
 	money += value
 	hud.update_money_label(money)
+	
+	collection.add_to_collection(artifact.artifact_type)
 
 func end_game() -> void:
 	Global.score = money

@@ -14,7 +14,7 @@ class_name ArtifactSpawner extends Area3D
 # Properties
 var spawn_artifact_scene: PackedScene
 var artifact: Artifact
-var stock: int = 5
+var stock: int = 0
 
 func _ready() -> void:
 	match artifact_type:
@@ -41,3 +41,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if artifact:
 		artifact.global_position = self.global_position
+
+func increment_stock() -> void:
+	stock += 1
+	quantity_label.text = str(stock) + "x"

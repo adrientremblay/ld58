@@ -22,6 +22,7 @@ var dragging = false
 # Data properties
 @export var artifact_name: String
 @export var value: float
+@export var artifact_type: ArtifactName
 
 #func _ready() -> void:
 	# Populate data properties

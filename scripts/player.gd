@@ -22,6 +22,8 @@ var sprinting: bool = false
 
 # Signals
 signal die
+signal player_can_interact(interact_message: String)
+signal player_can_no_longer_interact
 
 func _unhandled_input(event: InputEvent):
 	if looking_in_grave:
@@ -84,6 +86,7 @@ func _input(event: InputEvent) -> void:
 			if area.is_in_group("grave"):
 				var grave_interaction_area: GraveInteractionArea = area
 				toggle_looking_in_grave(grave_interaction_area.grave)
+				player_can_no_longer_interact.emit()
 	if event.is_action_pressed("sprint") and stamina > 0.0:
 		sprinting = true
 	if event.is_action_released("sprint"):
@@ -107,3 +110,11 @@ func play_random_footstep():
 func _on_kill_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("groundskeeper"):
 		die.emit()
+
+func _on_player_interaction_area_area_entered(area: Area3D) -> void:
+	if area.is_in_group("grave"):
+		player_can_interact.emit("Press E to Desecrate Grave")
+
+func _on_player_interaction_area_area_exited(area: Area3D) -> void:
+	if area.is_in_group("grave"):
+		player_can_no_longer_interact.emit()

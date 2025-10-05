@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=20 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -41,6 +41,9 @@ albedo_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_ya4ey"]
+font_size = 20
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_sugp2")
@@ -234,6 +237,25 @@ text = "Value: 12.0$"
 [node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource("5_tbgi4")
 
+[node name="MarginBottom" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="InteractLabel" type="Label" parent="HUD/MarginBottom"]
+layout_mode = 2
+text = "Press F to Pay Respect"
+label_settings = SubResource("LabelSettings_ya4ey")
+
 [node name="Groundskeeper" parent="." node_paths=PackedStringArray("patrol_node", "player") instance=ExtResource("8_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8896, 0.52997, 5.94705)
 patrol_node = NodePath("../PatrolNodes/Node3D")
@@ -270,6 +292,8 @@ autoplay = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0972, 0.563326, 11.2791)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
+[connection signal="player_can_interact" from="Player" to="HUD" method="_on_player_player_can_interact"]
+[connection signal="player_can_no_longer_interact" from="Player" to="HUD" method="_on_player_player_can_no_longer_interact"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave2" to="." method="_on_grave_collect_artifact"]

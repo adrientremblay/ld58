@@ -144,4 +144,6 @@ stream = ExtResource("8_smehm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
 shape = SubResource("CylinderShape3D_smehm")
 
+[connection signal="area_entered" from="PlayerInteractionArea" to="." method="_on_player_interaction_area_area_entered"]
+[connection signal="area_exited" from="PlayerInteractionArea" to="." method="_on_player_interaction_area_area_exited"]
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

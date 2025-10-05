@@ -13,7 +13,7 @@ class_name ArtifactSpawner extends Area3D
 # Properties
 var spawn_artifact_scene: PackedScene
 var artifact: Artifact
-var stock: int = 100 # remaining stock BESIDES the one already in the chamber
+var stock: int = 5
 
 func _ready() -> void:
 	match artifact_type:
@@ -21,17 +21,17 @@ func _ready() -> void:
 			spawn_artifact_scene = pocket_watch_scene
 			artifact_name_label.text = "Pocket Watch"
 	
-	quantity_label.text = str(stock + 1) + "x"
+	quantity_label.text = str(stock) + "x"
 	
 func _process(delta: float) -> void:
 	if artifact and artifact.dragging:
+		stock -= 1
+		quantity_label.text = str(stock) + "x"
 		artifact = null
-	if not artifact:
+	if not artifact and stock > 0:
 		var new_artifact: Artifact = spawn_artifact_scene.instantiate()
 		self.add_child(new_artifact)
 		artifact = new_artifact
-		stock -= 1
-		quantity_label.text = str(stock + 1) + "x"
 
 func _physics_process(delta: float) -> void:
 	if artifact:

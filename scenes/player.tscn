@@ -17,6 +17,24 @@
 height = 1.83716
 radius = 0.215332
 
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "run"
+length = 0.357
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random_footstep"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_fjrip"]
 resource_name = "walk"
 length = 0.5
@@ -38,24 +56,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_qad6w"]
 resource_name = "walk_slow"
 length = 1.3
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_random_footstep"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_smehm"]
-resource_name = "run"
-length = 0.357
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true

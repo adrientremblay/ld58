@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://86h7rakhb615"]
+
+[ext_resource type="Script" uid="uid://dkh6g8a7vdykt" path="res://scripts/artifact_spawner.gd" id="1_8ljor"]
+[ext_resource type="Texture2D" uid="uid://brv3u0ai8ghii" path="res://assets/images/artifact_slot.png" id="1_cg811"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ljor"]
+size = Vector3(0.800354, 0.713745, 0.791504)
+
+[node name="ArtifactSpawner" type="Area3D"]
+script = ExtResource("1_8ljor")
+
+[node name="ArtifactSlotBackground" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, 0, 0)
+modulate = Color(0.29, 1, 0.372833, 1)
+texture_filter = 0
+texture = ExtResource("1_cg811")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00814819, 0.345154, 0.00610352)
+shape = SubResource("BoxShape3D_8ljor")

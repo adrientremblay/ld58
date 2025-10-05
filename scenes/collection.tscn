@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://mdwsrivqmi5j"]
+[gd_scene load_steps=6 format=3 uid="uid://mdwsrivqmi5j"]
 
 [ext_resource type="Script" uid="uid://dw6rqarheryem" path="res://scripts/collection.gd" id="1_eqlcu"]
 [ext_resource type="PackedScene" uid="uid://b17smfjvy2ql8" path="res://assets/models/pocket_watch/pocket_watch.tscn" id="1_mldy4"]
+[ext_resource type="PackedScene" uid="uid://86h7rakhb615" path="res://scenes/artifact_spawner.tscn" id="3_akiqc"]
 [ext_resource type="PackedScene" uid="uid://d0662ui43pq8" path="res://scenes/artifact_slot.tscn" id="3_m8hiy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eeu2d"]
@@ -21,11 +22,26 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382385, -0.26123, -1.35416)
 shape = SubResource("BoxShape3D_eeu2d")
 
-[node name="PocketWatch" parent="." instance=ExtResource("1_mldy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297813, 0.177539, -0.604583)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59637, 0)
 
-[node name="ArtifactSlot" parent="." instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90463, 0, -1.62023)
+[node name="ArtifactSlots" type="Node3D" parent="."]
+
+[node name="ArtifactSlot" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5471, 0, -1.42639)
+
+[node name="ArtifactSlot2" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0904615, 0, -1.42639)
+
+[node name="ArtifactSlot3" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11424, 0, -1.42639)
+
+[node name="ArtifactSlot4" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03592, 0, -1.42639)
+
+[node name="ArtifactSlot5" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36754, 0, -1.42639)
+
+[node name="ArtifactSpawner" parent="." instance=ExtResource("3_akiqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21758, -0.0224609, 1.01907)
+spawn_artifact_scene = ExtResource("1_mldy4")

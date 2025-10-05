@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cti1hy5nlb7pb" path="res://assets/audio/sell_artifact.wav" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://0ek52vhkar05" path="res://scenes/fence_complete.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://br61h7lwo7wf1" path="res://scenes/fence_corner.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://fl8w6k3eluok" path="res://assets/models/groundskeeper/groundskeeper.glb" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://dg1lbpwaiyw8p" path="res://scenes/groundskeeper.tscn" id="8_tipki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -181,8 +181,8 @@ text = "Value: 12.0$"
 [node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource("5_tbgi4")
 
-[node name="groundskeeper" parent="." instance=ExtResource("8_tipki")]
-transform = Transform3D(-0.97573, 0, -0.218978, 0, 1, 0, 0.218978, 0, -0.97573, -6.00266, 0.534095, 2.59728)
+[node name="Groundskeeper" parent="." instance=ExtResource("8_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.868, 0.52997, 6.654)
 
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://0ek52vhkar05"]
+
+[ext_resource type="PackedScene" uid="uid://dvwgtmqghee6s" path="res://assets/models/fence/fence_complete.glb" id="1_ugwgh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugwgh"]
+albedo_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grtt4"]
+size = Vector3(2.28259, 1.80945, 0.189194)
+
+[node name="fence_complete" instance=ExtResource("1_ugwgh")]
+
+[node name="Pole" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Spike" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Spike_001" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Spike_002" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Spike_003" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Spike_004" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Corner" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Corner_001" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="Pole_001" parent="." index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugwgh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05064, 0.880798, -0.0014267)
+shape = SubResource("BoxShape3D_grtt4")

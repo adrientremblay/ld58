@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://gt84xvj50yhs"]
+[gd_scene load_steps=17 format=3 uid="uid://gt84xvj50yhs"]
 
 [ext_resource type="Script" uid="uid://bkkmit0k68hvc" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="AudioStream" uid="uid://08l3eqv1po54" path="res://assets/audio/footsteps/1.mp3" id="2_fjrip"]
@@ -78,6 +78,9 @@ _data = {
 &"walk_slow": SubResource("Animation_qad6w")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_smehm"]
+radius = 0.719727
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3vyb7")
 
@@ -135,3 +138,10 @@ volume_db = -10.0
 
 [node name="Panting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_smehm")
+
+[node name="KillZone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+shape = SubResource("CylinderShape3D_smehm")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

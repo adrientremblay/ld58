@@ -265,6 +265,7 @@ stream = ExtResource("10_choun")
 volume_db = -5.0
 autoplay = true
 
+[connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave2" to="." method="_on_grave_collect_artifact"]

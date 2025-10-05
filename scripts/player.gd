@@ -20,6 +20,9 @@ var looking_in_grave # indicates that the player is actively looking into a grav
 var stamina :float = 100.0
 var sprinting: bool = false
 
+# Signals
+signal die
+
 func _unhandled_input(event: InputEvent):
 	if looking_in_grave:
 		return
@@ -100,3 +103,7 @@ func play_random_footstep():
 	var footstep_sounds_list = footstep_sounds.get_children()
 	var random_sound = footstep_sounds_list[randi_range(0, footstep_sounds_list.size()-1)]
 	random_sound.play()
+
+func _on_kill_zone_body_entered(body: Node3D) -> void:
+	if body.is_in_group("groundskeeper"):
+		die.emit()

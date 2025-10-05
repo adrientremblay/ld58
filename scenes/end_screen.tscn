@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://byhlaw4061qie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pddrx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kq7ac"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_6e1uj"]
+font_size = 30
+
+[node name="Control" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pddrx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EndGameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You were caught by the groundskeeper"
+label_settings = SubResource("LabelSettings_kq7ac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "You stole 40$ worth of artifacts"
+label_settings = SubResource("LabelSettings_6e1uj")
+horizontal_alignment = 1

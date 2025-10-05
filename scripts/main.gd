@@ -13,3 +13,10 @@ func _on_grave_collect_artifact(artifact: Artifact) -> void:
 	var value = artifact.value
 	money += value
 	hud.update_money_label(money)
+
+func end_game() -> void:
+	Global.score = money
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+
+func _on_player_die() -> void:
+	end_game()

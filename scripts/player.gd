@@ -2,6 +2,7 @@ class_name Player extends CharacterBody3D
 
 # Constants
 const SPEED = 5.0
+const SPRINT_MULTIPLIER = 1.4
 const JUMP_VELOCITY = 4.5
 const CAMERA_MAX_ANGLE = 80
 const CAMERA_MIN_ANGLE = -80
@@ -40,16 +41,23 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# TODO As good practice, you should replace UI actions with custom gameplay actions.
+	var final_speed = SPEED
+	if Input.is_action_pressed("sprint"):
+		final_speed *= SPRINT_MULTIPLIER
+	
 	if not looking_in_grave:	
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
-			footstep_animation_player.play("walk")
+			velocity.x = direction.x * final_speed
+			velocity.z = direction.z * final_speed
+			if Input.is_action_pressed("sprint"):
+				footstep_animation_player.play("run")
+			else:
+				footstep_animation_player.play("walk")
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.z = move_toward(velocity.z, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, final_speed)
+			velocity.z = move_toward(velocity.z, 0, final_speed)
 
 	move_and_slide()
 

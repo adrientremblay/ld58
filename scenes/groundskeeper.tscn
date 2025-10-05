@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg1lbpwaiyw8p"]
+[gd_scene load_steps=15 format=3 uid="uid://dg1lbpwaiyw8p"]
 
 [ext_resource type="PackedScene" uid="uid://fl8w6k3eluok" path="res://assets/models/groundskeeper/groundskeeper.glb" id="1_pis34"]
 [ext_resource type="Script" uid="uid://ce07v28ds7827" path="res://scripts/groundskeeper.gd" id="2_8sy0d"]
@@ -50,8 +50,27 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "run"
+length = 0.357
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random_footstep"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_smehm"]
 _data = {
+&"run": SubResource("Animation_smehm"),
 &"walk": SubResource("Animation_fjrip"),
 &"walk_slow": SubResource("Animation_qad6w")
 }
@@ -60,23 +79,23 @@ _data = {
 script = ExtResource("2_8sy0d")
 
 [node name="Skeleton3D" parent="ComponentArmature" index="0"]
-bones/0/position = Vector3(0, -1.23326, 0.0934316)
+bones/0/position = Vector3(0, -1.19382, 0.0934316)
 bones/3/rotation = Quaternion(0.253401, 0, 0, 0.967361)
 bones/4/rotation = Quaternion(0.0340333, 0.00158765, 0.817032, 0.575585)
-bones/5/rotation = Quaternion(0.130765, 0.12998, 0.395277, 0.899868)
+bones/5/rotation = Quaternion(0.0370977, 0.0328152, 0.409488, 0.91097)
 bones/6/rotation = Quaternion(0.0103674, 0.000564867, 0.155036, 0.987854)
 bones/8/rotation = Quaternion(-0.485851, -0.250263, -0.206079, 0.811695)
 bones/9/rotation = Quaternion(-0.244876, -0.181234, 0.326285, 0.894834)
 bones/10/rotation = Quaternion(-0.00188639, 0.00165858, -0.687773, 0.725922)
-bones/12/position = Vector3(2.91085e-08, -1.23326, 0.0934316)
-bones/12/rotation = Quaternion(0.70074, 0.277815, 0.650246, 0.0946783)
-bones/13/rotation = Quaternion(-0.128992, -0.0110133, -0.0783147, 0.988487)
-bones/14/position = Vector3(-5.36826e-09, -1.23326, 0.0934316)
-bones/14/rotation = Quaternion(-0.627179, -0.114474, 0.697779, 0.326568)
-bones/15/rotation = Quaternion(-0.157917, 0.0374548, 0.241486, 0.956736)
+bones/12/position = Vector3(2.19228e-08, -1.19382, 0.0934316)
+bones/12/rotation = Quaternion(0.640941, -0.117243, 0.697319, -0.298654)
+bones/13/rotation = Quaternion(-0.0900251, -0.100029, -0.711307, 0.689878)
+bones/14/position = Vector3(-9.32287e-09, -1.18381, 0.0934316)
+bones/14/rotation = Quaternion(-0.680845, 0.0311509, 0.706421, 0.190917)
+bones/15/rotation = Quaternion(-0.162549, 0.00939626, 0.0605815, 0.984794)
 
 [node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.29175, -0.555654)
+transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.25231, -0.555654)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
 light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)

@@ -16,6 +16,8 @@ enum Mode {
 @onready var idle_timer: Timer = $IdleTimer
 @onready var footstep_sounds: Node3D = $FootstepSounds
 @onready var footstep_animation_player: AnimationPlayer = $FootstepAnimationPlayer
+@onready var you_there_stop_sound: AudioStreamPlayer3D = $YouThereStop
+@onready var humming_sound: AudioStreamPlayer3D = $Humming
 
 # Properties
 var current_mode: Mode = Mode.PATROLLING
@@ -50,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		direction = direction.normalized()
 		new_velocity = direction * RUN_MULTIPLIER
 		footstep_animation_player.play("walk")
+		animation_player.play("Run")
 		
 	self.velocity = new_velocity
 	look_at(self.global_position + velocity)
@@ -68,5 +71,8 @@ func play_random_footstep():
 	random_sound.play()
 
 func _on_player_detection_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if current_mode != Mode.CHASING and body.is_in_group("player"):
 		current_mode = Mode.CHASING
+		you_there_stop_sound.play()
+		humming_sound.stop()
+		idle_timer.stop()

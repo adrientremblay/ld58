@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dg1lbpwaiyw8p"]
+[gd_scene load_steps=17 format=3 uid="uid://dg1lbpwaiyw8p"]
 
 [ext_resource type="PackedScene" uid="uid://fl8w6k3eluok" path="res://assets/models/groundskeeper/groundskeeper.glb" id="1_pis34"]
 [ext_resource type="Script" uid="uid://ce07v28ds7827" path="res://scripts/groundskeeper.gd" id="2_8sy0d"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c7qmh4mty72ij" path="res://assets/audio/footsteps/5.mp3" id="7_82ypu"]
 [ext_resource type="AudioStream" uid="uid://irlsfjrwioj5" path="res://assets/audio/footsteps/6.mp3" id="8_qh25g"]
 [ext_resource type="AudioStream" uid="uid://cexyp2qccagjv" path="res://assets/audio/humming.mp3" id="9_5vgus"]
+[ext_resource type="AudioStream" uid="uid://bhekv7rxysoi1" path="res://assets/audio/you_there_stop.mp3" id="10_7qw6t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pis34"]
 radius = 0.352791
@@ -83,23 +84,23 @@ height = 7.42391
 script = ExtResource("2_8sy0d")
 
 [node name="Skeleton3D" parent="ComponentArmature" index="0"]
-bones/0/position = Vector3(0, -1.16395, 0.0934316)
+bones/0/position = Vector3(0, -1.16713, 0.0934316)
 bones/3/rotation = Quaternion(0.253401, 0, 0, 0.967361)
 bones/4/rotation = Quaternion(0.0340333, 0.00158765, 0.817032, 0.575585)
-bones/5/rotation = Quaternion(-0.0692628, -0.0773537, 0.41614, 0.903353)
+bones/5/rotation = Quaternion(-0.0757086, -0.0840311, 0.416287, 0.902171)
 bones/6/rotation = Quaternion(0.0103674, 0.000564867, 0.155036, 0.987854)
 bones/8/rotation = Quaternion(-0.485851, -0.250263, -0.206079, 0.811695)
 bones/9/rotation = Quaternion(-0.244876, -0.181234, 0.326285, 0.894834)
 bones/10/rotation = Quaternion(-0.00188639, 0.00165858, -0.687773, 0.725922)
-bones/12/position = Vector3(2.36028e-08, -1.16395, 0.0934316)
-bones/12/rotation = Quaternion(0.641496, -0.115945, 0.697536, -0.297461)
-bones/13/rotation = Quaternion(-0.128383, -0.0174012, -0.123739, 0.983821)
+bones/12/position = Vector3(1.42292e-08, -1.16713, 0.0934316)
+bones/12/rotation = Quaternion(0.656259, -0.079081, 0.702671, -0.263294)
+bones/13/rotation = Quaternion(-0.129262, -0.00637599, -0.0453389, 0.990553)
 bones/14/position = Vector3(-2.94648e-08, -1.16866, 0.0934316)
-bones/14/rotation = Quaternion(-0.703601, 0.286445, 0.64649, -0.0703274)
-bones/15/rotation = Quaternion(-0.162847, -0.00149826, -0.00966009, 0.986603)
+bones/14/rotation = Quaternion(-0.703545, 0.286956, 0.646264, -0.070884)
+bones/15/rotation = Quaternion(-0.162846, -0.00156953, -0.0101196, 0.986598)
 
 [node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.22244, -0.555654)
+transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.22562, -0.555654)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
 light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)
@@ -149,7 +150,12 @@ stream = ExtResource("9_5vgus")
 volume_db = -20.0
 autoplay = true
 
-[node name="PlayerDetectionArea" type="Area3D" parent="." index="7"]
+[node name="YouThereStop" type="AudioStreamPlayer3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91813, 0)
+stream = ExtResource("10_7qw6t")
+volume_db = -20.0
+
+[node name="PlayerDetectionArea" type="Area3D" parent="." index="8"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.37398, -2.95734)

@@ -7,7 +7,7 @@ extends Node3D
 var money = 20
 
 func _ready() -> void:
-	pass # Replace with function body.
+	$groundskeeper/AnimationPlayer.play("Idle")
 
 func _on_grave_collect_artifact(artifact: Artifact) -> void:
 	var value = artifact.value

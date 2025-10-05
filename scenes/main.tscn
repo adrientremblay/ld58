@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=12 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -6,16 +6,29 @@
 [ext_resource type="Script" uid="uid://c4k1685adavty" path="res://scenes/hud.gd" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://cti1hy5nlb7pb" path="res://assets/audio/sell_artifact.wav" id="5_tbgi4"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
+sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
+sky_horizon_color = Color(0.0365652, 0.0386032, 0.0419114, 1)
+ground_bottom_color = Color(0.0109173, 0.0216742, 0.00884749, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+sun_angle_max = 7.2
+
+[sub_resource type="Sky" id="Sky_tefeu"]
+sky_material = SubResource("ProceduralSkyMaterial_tbgi4")
+
 [sub_resource type="Environment" id="Environment_tbgi4"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_tefeu")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.1
+ambient_light_energy = 0.05
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
 size = Vector3(135.038, 1, 103.438)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
-albedo_color = Color(0.2948, 0.44, 0.176, 1)
+albedo_color = Color(0.18894, 0.276046, 0.0938407, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
 font_size = 40

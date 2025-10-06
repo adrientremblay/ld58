@@ -69,3 +69,9 @@ artifact_type = 1
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.76136)
 text = "Collection"
 font_size = 70
+
+[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
+[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot2" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
+[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot3" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
+[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot4" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
+[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot5" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]

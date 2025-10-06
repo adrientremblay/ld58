@@ -3,6 +3,7 @@ class_name Collection extends Node3D
 # Children
 @onready var collection_camera: Camera3D = $Camera3D
 @onready var artifact_spawners: Array[Node] = $ArtifactSpawners.get_children()
+@onready var artifact_slots: Array[Node] = $ArtifactSlots.get_children()
 
 # Properties
 var collection_active: bool = false
@@ -71,3 +72,12 @@ func add_to_collection(artifact_type: Global.ArtifactName):
 	for artifact_spawner: ArtifactSpawner in artifact_spawners:
 		if artifact_spawner.artifact_type == artifact_type:
 			artifact_spawner.increment_stock()
+
+func _on_artifact_slot_should_update_global_equipped_artifacts_list() -> void:
+	for i in range(0, artifact_slots.size()):
+		var artifact_slot : ArtifactSlot = artifact_slots[i]
+		var artifact = artifact_slot.artifact
+		if artifact:
+			Global.active_upgrades[i] = artifact.artifact_type
+		else:
+			Global.active_upgrades[i] = Global.ArtifactName.NOTHING

@@ -3,7 +3,8 @@ extends Node
 # Enums
 enum ArtifactName {
 	POCKET_WATCH,
-	GOLD_RING
+	GOLD_RING,
+	NOTHING
 }
 
 enum Rarity {
@@ -11,10 +12,6 @@ enum Rarity {
 	UNCOMMON,
 	RARE
 }
-
-# Variables
-var score = 0.0
-var survived: bool = false
 
 # Constants
 const ARTIFACT_DATA = {
@@ -32,9 +29,19 @@ const ARTIFACT_DATA = {
 	}
 }
 
-# Spawn chance as a decimal percentage
-const SPAWN_CHANCE_MAP = {
+const SPAWN_CHANCE_MAP = { # Spawn chance as a decimal percentage
 	Rarity.COMMON: 0.95,
 	Rarity.UNCOMMON: 0.80,
 	Rarity.RARE: 0.50,
 }
+
+# Variables
+var score = 0.0
+var survived: bool = false
+var active_upgrades: Array[ArtifactName] = [
+	ArtifactName.NOTHING,
+	ArtifactName.NOTHING,
+	ArtifactName.NOTHING,
+	ArtifactName.NOTHING,
+	ArtifactName.NOTHING,
+] #always length 5

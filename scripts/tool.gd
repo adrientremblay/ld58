@@ -46,6 +46,5 @@ func dig() -> void:
 		if artifact_name == Global.ArtifactName.POCKET_WATCH:
 			speed_scale *= 1.5
 	
-	Screen.print(speed_scale)
 	animation_player.speed_scale = speed_scale
 	animation_player.play("dig")

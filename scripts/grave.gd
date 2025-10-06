@@ -25,7 +25,6 @@ signal move_artifact_label_to_cursor(artifact: Artifact)
 func _ready() -> void:
 	sack_model.visible = false
 	shovel.visible = false
-	spawn_artifacts()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and grave_active:
@@ -106,13 +105,22 @@ func spawn_artifacts() -> void:
 	var artifact_spawns: Array[Node] = artifact_spawns_node.get_children()
 	var indexes_order = range(0, artifact_spawns.size()-1) # indexes to spawn stuff in
 	indexes_order.shuffle() # randomize the list
-	
 	var current_index = 0
 	
+	# Detereming what the global spawn chance boost should be based on upgrades
+	var spawn_chance_boost: float = 0.0
+	for artifact_name: Global.ArtifactName in Global.active_upgrades:
+		if artifact_name == Global.ArtifactName.GOLD_RING:
+			spawn_chance_boost += 0.05
+			Screen.print("spawn chance boost= " + str(spawn_chance_boost))
+	
 	# try and spawn pocket watch
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity]:
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity] + spawn_chance_boost:
 		artifact_spawns[indexes_order[0]].add_child(pocket_watch_scene.instantiate())
 	
 	# try and spawn a ring
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity]:
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity] + spawn_chance_boost:
 		artifact_spawns[indexes_order[1]].add_child(ring_scene.instantiate())
+
+func _on_mound_full_fully_uncovered() -> void:
+	spawn_artifacts()

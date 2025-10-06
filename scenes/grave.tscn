@@ -118,4 +118,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69324, 0, 0.559138)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65907, 1.95452)
 
 [connection signal="body_entered" from="SackDetectionArea" to="." method="_on_sack_detection_area_body_entered"]
+[connection signal="fully_uncovered" from="mound_full" to="." method="_on_mound_full_fully_uncovered"]
 [connection signal="fully_uncovered" from="mound_full" to="Coffin" method="_on_mound_full_fully_uncovered"]

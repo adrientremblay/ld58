@@ -16,8 +16,7 @@ var dragging = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and dragging:
 		dragging = false
-		animation_player.speed_scale = 0.5
-		animation_player.play("dig")
+		dig()
 
 func _physics_process(delta: float) -> void:
 	if not dragging:
@@ -39,5 +38,14 @@ func _physics_process(delta: float) -> void:
 	
 	if global_position.y > Y_CAP - 0.2:
 		global_position.y = Y_CAP
-		
-		
+
+func dig() -> void:
+	# determine what the speed scale should be based on the equipped artifacts
+	var speed_scale: float = 1.0
+	for artifact_name: Global.ArtifactName in Global.active_upgrades:
+		if artifact_name == Global.ArtifactName.POCKET_WATCH:
+			speed_scale *= 1.5
+	
+	Screen.print(speed_scale)
+	animation_player.speed_scale = speed_scale
+	animation_player.play("dig")

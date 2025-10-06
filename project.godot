@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ld58"
-run/main_scene="uid://dt6x6gd5ur568"
+run/main_scene="uid://ds6mh8mmwx4tb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

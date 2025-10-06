@@ -7,14 +7,21 @@ extends Control
 @onready var rarity_label: Label = $ArtifactPanel/VBoxContainer/HBoxContainer/RarityLabel
 @onready var help_label : Label = $AnchorBottomRight/HelpLabel
 
+# Constants
+var main_text: String = "[W,S,A,D] - Move
+						[SHIFT] - Sprint
+						[E] - Dig Up Grave
+						[C] - View Collection"
+
+# Properties TODO this is kinda dumb
+var looking_at_collection: bool = false
+var looking_at_grave: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	artifact_panel.visible = false
 	interact_label.text = ""
-	help_label.text = "[W,S,A,D] - Move
-						[SHIFT] - Sprint
-						[E] - Dig Up Grave
-						[C] - View Collection"
+	help_label.text = main_text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -57,4 +64,10 @@ func _on_player_player_can_no_longer_interact() -> void:
 	interact_label.text = ""
 
 func _input(event: InputEvent) -> void:
-	pass
+	if event.is_action_pressed("collection"):
+		looking_at_collection = not looking_at_collection
+		if looking_at_collection:
+			help_label.text = "[MOUSE] - Drag and drop artifacts
+							[C] - Leave Collection"
+		else:
+			help_label.text = main_text

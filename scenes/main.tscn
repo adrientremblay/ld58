@@ -78,6 +78,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68676, -0.106132, 2.67804)
 [node name="Grave2" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845984, -0.106132, 2.67804)
 
+[node name="Grave7" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8042, -0.106132, 2.18039)
+
+[node name="Grave8" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8042, -0.106132, -0.665913)
+
+[node name="Grave9" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8042, -0.106132, -3.48922)
+
+[node name="Grave10" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8042, -0.106132, -6.32048)
+
+[node name="Grave11" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8042, -0.106132, -9.1171)
+
+[node name="Grave12" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.8042, -0.106132, -9.1171)
+
 [node name="Grave3" parent="CSGCombiner3D" instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27652, -0.106132, 2.67804)
 
@@ -681,6 +699,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.244, 0.534095, 40.5715)
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave2" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave2" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave7" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave7" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave8" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave8" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave9" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave9" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave10" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave10" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave11" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave11" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="collect_artifact" from="CSGCombiner3D/Grave12" to="." method="_on_grave_collect_artifact"]
+[connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave12" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave3" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave3" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave4" to="." method="_on_grave_collect_artifact"]

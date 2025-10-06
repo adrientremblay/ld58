@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c34otpyaoqehk"]
+[gd_scene load_steps=16 format=3 uid="uid://c34otpyaoqehk"]
 
 [ext_resource type="Script" uid="uid://bt8d025jwh5ax" path="res://scripts/grave.gd" id="1_inmiy"]
 [ext_resource type="PackedScene" uid="uid://c1c5q8vxk0byt" path="res://assets/models/gravestone/gravestone_model.tscn" id="1_mlivn"]
 [ext_resource type="PackedScene" uid="uid://bp807l4qyogow" path="res://assets/models/mound_empty/mound_empty.glb" id="2_inmiy"]
+[ext_resource type="PackedScene" uid="uid://b4qnm0ditwtnt" path="res://scenes/gravestone_2.tscn" id="3_q8ail"]
 [ext_resource type="Script" uid="uid://c5wl0b2setkgs" path="res://scripts/grave_interaction_area.gd" id="4_7om2q"]
+[ext_resource type="PackedScene" uid="uid://ciqicno332rmx" path="res://scenes/gravestone_3.tscn" id="4_aaav7"]
 [ext_resource type="PackedScene" uid="uid://tlagva70qf7y" path="res://assets/models/sack/sack_model.tscn" id="5_qe13i"]
 [ext_resource type="PackedScene" uid="uid://p5j1uwjic7gm" path="res://scenes/shovel.tscn" id="6_e7cip"]
 [ext_resource type="PackedScene" uid="uid://bb8i4gi2owcyi" path="res://scenes/mound_full.tscn" id="7_aulm7"]
@@ -32,8 +34,19 @@ operation = 2
 size = Vector3(1.325, 1.251, 2.95286)
 script = ExtResource("1_inmiy")
 
-[node name="gravestone" parent="." instance=ExtResource("1_mlivn")]
+[node name="GravestoneVariants" type="Node3D" parent="."]
+
+[node name="gravestone" parent="GravestoneVariants" instance=ExtResource("1_mlivn")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.621929, -1.63977)
+visible = false
+
+[node name="gravestone2" parent="GravestoneVariants" instance=ExtResource("3_q8ail")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.622, -1.64)
+visible = false
+
+[node name="gravestone3" parent="GravestoneVariants" instance=ExtResource("4_aaav7")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.622, -1.64)
+visible = false
 
 [node name="mound_empty" parent="." instance=ExtResource("2_inmiy")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.621929, 0.00521323)

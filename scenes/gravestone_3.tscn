@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciqicno332rmx"]
+
+[ext_resource type="PackedScene" uid="uid://dtsxl7mjvi35u" path="res://assets/models/gravestone/gravestone3.glb" id="1_4fip5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fip5"]
+albedo_color = Color(0.470076, 0.470076, 0.470076, 1)
+
+[node name="gravestone3" instance=ExtResource("1_4fip5")]
+
+[node name="Variant3" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4fip5")

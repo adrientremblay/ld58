@@ -7,6 +7,7 @@ class_name Grave extends CSGBox3D
 @onready var shovel_spawn = $ShovelSpawn
 @onready var artifact_spawns_node: Node3D = $ArtifactSpawns
 @onready var player_stand_position: Node3D = $PlayerStandPosition
+@onready var grave_stone_variants: Array[Node] = $GravestoneVariants.get_children()
 
 # Artifact scenes
 @onready var pocket_watch_scene: PackedScene = preload("res://assets/models/pocket_watch/pocket_watch.tscn")
@@ -28,6 +29,14 @@ signal move_artifact_label_to_cursor(artifact: Artifact)
 func _ready() -> void:
 	sack_model.visible = false
 	shovel.visible = false
+	
+	# only show one of the gravestones
+	var gravestone_to_show = randi_range(0, 2)
+	for i in range(0, grave_stone_variants.size()):
+		if i == gravestone_to_show:
+			grave_stone_variants[i].visible = true
+		else:
+			grave_stone_variants[i].visible = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and grave_active:

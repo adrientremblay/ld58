@@ -72,10 +72,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.192938)
 
 [node name="ArtifactSpawner" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.022, 1.019)
+artifact_type = 1
 
 [node name="ArtifactSpawner2" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.022, 1.019)
-artifact_type = 1
+artifact_type = 2
 
 [node name="ArtifactSpawner3" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022, 1.019)

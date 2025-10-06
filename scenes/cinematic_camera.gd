@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 	var z = RADIUS * cos(phi) * sin(theta)
 
 	global_transform.origin = Vector3(x, y, z)
-	look_at(Vector3.ZERO, Vector3.UP)  # Always look at origin
+	look_at(Vector3(0,0.5,0), Vector3.UP)  # Always look at origin
 	
 	# Go to next script index
 	if abs(theta -SCRIPT[script_index][0]) < 0.05 and abs(phi -SCRIPT[script_index][1]) < 0.05 :

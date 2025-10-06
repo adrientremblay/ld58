@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://ds6mh8mmwx4tb"]
 
-[ext_resource type="PackedScene" uid="uid://fl8w6k3eluok" path="res://assets/models/groundskeeper/groundskeeper.glb" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://ddppmuqonbssj" path="res://scenes/title_screen.gd" id="1_s4lrb"]
 [ext_resource type="Script" uid="uid://brjvifunpfgkh" path="res://scenes/cinematic_camera.gd" id="1_sa3yf"]
 [ext_resource type="PackedScene" uid="uid://dkp2p6hb7ok6" path="res://scenes/coffin.tscn" id="4_dc4i4"]
 [ext_resource type="PackedScene" uid="uid://c34otpyaoqehk" path="res://scenes/grave.tscn" id="5_e54dn"]
+[ext_resource type="PackedScene" uid="uid://caxutgouov8ur" path="res://scenes/groundskeeper_static.tscn" id="6_3yumr"]
 [ext_resource type="PackedScene" uid="uid://byllmdfbep8ih" path="res://assets/models/shovel/static_shovel.glb" id="6_e54dn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1a2ex"]
@@ -41,16 +41,9 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_sa3yf")
 surface_material_override/0 = SubResource("StandardMaterial3D_1a2ex")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28269, 0)
-omni_range = 2.24767
-
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CinematicCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.989597, 2.519)
 script = ExtResource("1_sa3yf")
-
-[node name="Groundskeeper" parent="." instance=ExtResource("1_fgkus")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Coffin" parent="." instance=ExtResource("4_dc4i4")]
 transform = Transform3D(0.893802, 0, -0.448461, 0, 1, 0, 0.448461, 0, 0.893802, -1.90486, 0, -0.508972)
@@ -60,3 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.779894, -0.616587, -1.72569
 
 [node name="static_shovel" parent="." instance=ExtResource("6_e54dn")]
 transform = Transform3D(0.617443, 0.235028, 0.231357, 0, 0.491063, -0.498856, -0.329794, 0.440021, 0.433148, 1.5829, 0.50524, -2.49421)
+
+[node name="Groundskeeper" parent="." instance=ExtResource("6_3yumr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

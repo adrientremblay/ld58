@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://caxutgouov8ur"]
+
+[ext_resource type="PackedScene" uid="uid://d03mr78a4khob" path="res://assets/models/groundskeeper/groundskeeper_static.glb" id="1_qt3y3"]
+
+[node name="groundskeeper_static" instance=ExtResource("1_qt3y3")]
+
+[node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
+transform = Transform3D(0.044939, 0.0115189, 0.237656, 0.00339206, 0.241802, -0.0123613, -0.23791, 0.00562336, 0.0447146, 1.0037, -1.06603, 0.0787078)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
+light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)
+omni_range = 2.37333

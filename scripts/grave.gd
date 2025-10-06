@@ -125,34 +125,36 @@ func spawn_artifacts() -> void:
 	
 	# Detereming what the global spawn chance boost should be based on upgrades
 	var spawn_chance_boost: float = 0.0
+	var spawn_chance_multiplier: float = 1.0
 	for i in range(0, Global.active_upgrades.size()):
 		var artifact_name = Global.active_upgrades[i]
 		if artifact_name == Global.ArtifactName.GOLD_RING:
 			spawn_chance_boost += 0.05
-	#Screen.print("spawn chance boost=" + str(spawn_chance_boost))
+		elif artifact_name == Global.ArtifactName.TALISMAN:
+			spawn_chance_multiplier *= 1.10
 	
 	# try and spawn pocket watch
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity] + spawn_chance_boost:
+	if randf() <= (Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity] + spawn_chance_boost) * spawn_chance_multiplier:
 		artifact_spawns[indexes_order[0]].add_child(pocket_watch_scene.instantiate())
 	
 	# try and spawn a doll
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.DOLL].rarity] + spawn_chance_boost:
+	if randf() <= (Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.DOLL].rarity] + spawn_chance_boost) * spawn_chance_multiplier:
 		artifact_spawns[indexes_order[1]].add_child(doll_scene.instantiate())
 	
 	# try and spawn a ring
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity] + spawn_chance_boost:
+	if randf() <= (Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity] + spawn_chance_boost) * spawn_chance_multiplier:
 		artifact_spawns[indexes_order[2]].add_child(ring_scene.instantiate())
 	
 	# try and spawn a silver gauntlet
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.SILVER_GAUNTLET].rarity] + spawn_chance_boost:
+	if randf() <= (Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.SILVER_GAUNTLET].rarity] + spawn_chance_boost) * spawn_chance_multiplier:
 		artifact_spawns[indexes_order[3]].add_child(gauntlet_scene.instantiate())
 	
 	# try and spawn a rat
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.RAT].rarity] + spawn_chance_boost:
+	if randf() <= (Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.RAT].rarity] + spawn_chance_boost) * spawn_chance_multiplier:
 		artifact_spawns[indexes_order[4]].add_child(rat_scene.instantiate())
 	
 	# try and spawn a talisman
-	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.TALISMAN].rarity] + spawn_chance_boost:
+	if randf() <= (Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.TALISMAN].rarity] + spawn_chance_boost) * spawn_chance_multiplier:
 		artifact_spawns[indexes_order[5]].add_child(talisman_scene.instantiate())
 
 func _on_mound_full_fully_uncovered() -> void:

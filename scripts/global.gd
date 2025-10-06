@@ -58,7 +58,7 @@ const ARTIFACT_DATA = {
 	ArtifactName.TALISMAN: {
 		"name": "Talisman",
 		"value": 100.0,
-		"rarity": Rarity.COMMON,
+		"rarity": Rarity.UNCOMMON,
 		"effect": "Multiplies the likelihood of finding artifacts by 110%", # might be OP
 		"number": 1.10
 	}

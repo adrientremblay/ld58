@@ -26,6 +26,8 @@ signal die
 signal leave
 signal player_can_interact(interact_message: String)
 signal player_can_no_longer_interact
+signal player_looks_in_grave
+signal player_stops_looking_in_grave
 
 func _unhandled_input(event: InputEvent):
 	if looking_in_grave or looking_at_collection:
@@ -110,9 +112,11 @@ func toggle_looking_in_grave(grave: Grave) -> void:
 		var direction_to_grave: Vector3 = grave.global_position - global_position
 		direction_to_grave.y = 0
 		look_at(global_position + direction_to_grave.normalized())
+		player_looks_in_grave.emit()
 	else:
 		camera.current = true
 		grave.disactivate()
+		player_stops_looking_in_grave.emit()
 		
 func play_random_footstep():
 	var footstep_sounds_list = footstep_sounds.get_children()

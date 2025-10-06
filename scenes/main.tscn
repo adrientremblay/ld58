@@ -897,6 +897,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.244, 0.534095, 40.5715)
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]
 [connection signal="player_can_interact" from="Player" to="HUD" method="_on_player_player_can_interact"]
 [connection signal="player_can_no_longer_interact" from="Player" to="HUD" method="_on_player_player_can_no_longer_interact"]
+[connection signal="player_looks_in_grave" from="Player" to="HUD" method="_on_player_player_looks_in_grave"]
+[connection signal="player_stops_looking_in_grave" from="Player" to="HUD" method="_on_player_player_stops_looking_in_grave"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave2" to="." method="_on_grave_collect_artifact"]

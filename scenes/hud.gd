@@ -15,7 +15,6 @@ var main_text: String = "[W,S,A,D] - Move
 
 # Properties TODO this is kinda dumb
 var looking_at_collection: bool = false
-var looking_at_grave: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,3 +70,11 @@ func _input(event: InputEvent) -> void:
 							[C] - Leave Collection"
 		else:
 			help_label.text = main_text
+
+func _on_player_player_looks_in_grave() -> void:
+	help_label.text = "[MOUSE] - Drag and drop artifacts
+						[MOUSE] - Drag and drop shovel to use it
+						[E] - Leave Grave"
+
+func _on_player_player_stops_looking_in_grave() -> void:
+	help_label.text = main_text

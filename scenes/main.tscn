@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=23 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://0ek52vhkar05" path="res://scenes/fence_complete.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://br61h7lwo7wf1" path="res://scenes/fence_corner.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dg1lbpwaiyw8p" path="res://scenes/groundskeeper.tscn" id="8_tipki"]
-[ext_resource type="PackedScene" uid="uid://cfmk8bpghe6w8" path="res://assets/models/doll/doll.glb" id="8_trceg"]
 [ext_resource type="AudioStream" uid="uid://ds0586vuunbye" path="res://assets/audio/night_ambience.mp3" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://1ravjgictgvt" path="res://scenes/gate.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://mdwsrivqmi5j" path="res://scenes/collection.tscn" id="12_eb6dy"]
@@ -760,9 +759,6 @@ text = "Effect: "
 [node name="EffectLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "Effect..."
-
-[node name="doll" parent="HUD/ArtifactPanel/VBoxContainer/HBoxContainer2" instance=ExtResource("8_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6543, 0.959101, -5.66734)
 
 [node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource("5_tbgi4")

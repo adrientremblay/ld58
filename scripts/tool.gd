@@ -45,7 +45,7 @@ func dig() -> void:
 	for i in range(0, Global.active_upgrades.size()):
 		var artifact_name = Global.active_upgrades[i]
 		if artifact_name == Global.ArtifactName.POCKET_WATCH:
-			speed_scale *= 1.5
+			speed_scale += Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].number
 	#Screen.print("Speed scale=" + str(speed_scale))
 	
 	animation_player.speed_scale = speed_scale

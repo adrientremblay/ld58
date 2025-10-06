@@ -20,19 +20,22 @@ const ARTIFACT_DATA = {
 		"name": "Pocket Watch",
 		"value": 5.0,
 		"rarity": Rarity.COMMON,
-		"effect": "Increases dig speed by 50%"
+		"effect": "Adds 25% to dig speed",
+		"number": 0.25
 	},
 	ArtifactName.DOLL: {
 		"name": "Doll",
 		"value": 10.0,
 		"rarity": Rarity.UNCOMMON,
-		"effect": "Copies the effect of the artifact to the immediate right"
+		"effect": "Copies the effect of the artifact to the immediate right",
+		"number": 0.0
 	},
 	ArtifactName.GOLD_RING: {
 		"name": "Gold Ring",
 		"value": 25.0,
 		"rarity": Rarity.RARE,
-		"effect": "Increases likelihood of finding artifacts in coffins by 5%"
+		"effect": "Increases likelihood of finding artifacts in coffins by 5%",
+		"number": 0.05
 	}
 }
 

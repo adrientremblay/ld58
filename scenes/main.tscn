@@ -854,7 +854,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9328, 0, 6.35944)
 
 [node name="NightAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_choun")
-volume_db = -5.0
+volume_db = -8.0
 autoplay = true
 
 [node name="Collection" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_eb6dy")]

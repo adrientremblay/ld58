@@ -8,7 +8,7 @@ enum Mode {
 }
 
 # Exports
-@export var patrol_node: PatrolNode
+@export var patrol_route: Array[Node3D]
 @export var player: Player
 
 # Children
@@ -21,6 +21,7 @@ enum Mode {
 
 # Properties
 var current_mode: Mode = Mode.PATROLLING
+var patrol_node_index: int = 0
 
 # Constants
 var BASE_SPEED = 1.5
@@ -36,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	
 	var new_velocity: Vector3 = Vector3.ZERO
 	if current_mode == Mode.PATROLLING:
-		var direction = patrol_node.global_position - global_position
+		var direction = patrol_route[patrol_node_index].global_position - global_position
 		direction.y = 0
 		if direction.length() < 0.01:
 			current_mode = Mode.IDLING
@@ -60,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_idle_timer_timeout() -> void:
-	patrol_node = patrol_node.next
+	patrol_node_index = (patrol_node_index + 1) % patrol_route.size()
 	current_mode = Mode.PATROLLING
 	animation_player.play("Walk")
 	footstep_animation_player.play("walk_slow")

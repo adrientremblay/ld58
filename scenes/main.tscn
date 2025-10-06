@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=22 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://0ek52vhkar05" path="res://scenes/fence_complete.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://br61h7lwo7wf1" path="res://scenes/fence_corner.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dg1lbpwaiyw8p" path="res://scenes/groundskeeper.tscn" id="8_tipki"]
-[ext_resource type="Script" uid="uid://l00v1ujl0iu5" path="res://scripts/patrol_node.gd" id="9_85g3d"]
 [ext_resource type="AudioStream" uid="uid://ds0586vuunbye" path="res://assets/audio/night_ambience.mp3" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://1ravjgictgvt" path="res://scenes/gate.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://mdwsrivqmi5j" path="res://scenes/collection.tscn" id="12_eb6dy"]
@@ -769,32 +768,24 @@ layout_mode = 2
 text = "Press F to Pay Respect"
 label_settings = SubResource("LabelSettings_ya4ey")
 
-[node name="Groundskeeper" parent="." node_paths=PackedStringArray("patrol_node", "player") instance=ExtResource("8_tipki")]
+[node name="Groundskeeper" parent="." node_paths=PackedStringArray("patrol_route", "player") instance=ExtResource("8_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8896, 0.52997, 5.94705)
-patrol_node = NodePath("../PatrolNodes/Node3D")
+patrol_route = [NodePath("../PatrolNodes/Node3D"), NodePath("../PatrolNodes/Node3D2"), NodePath("../PatrolNodes/Node3D4"), NodePath("../PatrolNodes/Node3D3")]
 player = NodePath("../Player")
 
 [node name="PatrolNodes" type="Node3D" parent="."]
 
-[node name="Node3D" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
+[node name="Node3D" type="Node3D" parent="PatrolNodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4963, 0, 5.89758)
-script = ExtResource("9_85g3d")
-next = NodePath("../Node3D2")
 
-[node name="Node3D2" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
+[node name="Node3D2" type="Node3D" parent="PatrolNodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5239, 0, 28.3278)
-script = ExtResource("9_85g3d")
-next = NodePath("../Node3D4")
 
-[node name="Node3D3" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
+[node name="Node3D3" type="Node3D" parent="PatrolNodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1446, 0, 5.72563)
-script = ExtResource("9_85g3d")
-next = NodePath("../Node3D")
 
-[node name="Node3D4" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
+[node name="Node3D4" type="Node3D" parent="PatrolNodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0521, 0, 28.0397)
-script = ExtResource("9_85g3d")
-next = NodePath("../Node3D3")
 
 [node name="NightAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_choun")

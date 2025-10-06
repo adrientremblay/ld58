@@ -1,20 +1,29 @@
 extends Camera3D
 
 # Constants
-const RADIUS: float = 10.0
+const RADIUS: float = 7.0
+
+const SCRIPT = [
+	[0.0, 0.0],
+	[PI/2, 0.0]
+]
 
 # Properties
+
 # Angles in radians
 var theta: float = 0.0  # horizontal rotation
 var phi: float = 0.0    # vertical rotation
+
 # Rotation speed
 var speed_theta: float = 0.5
 var speed_phi: float = 0.2
 
+var script_index: int = 1
+
 func _process(delta: float) -> void:
 	# Increment angles
-	theta += speed_theta * delta
-	phi += speed_phi * delta
+	theta = lerp(theta, SCRIPT[script_index][0], delta)
+	phi = lerp(phi, SCRIPT[script_index][1], delta)
 
 	# Clamp phi to avoid flipping at poles
 	phi = clamp(phi, -PI/2 + 0.01, PI/2 - 0.01)

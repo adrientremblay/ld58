@@ -57,10 +57,10 @@ const ARTIFACT_DATA = {
 }
 
 const SPAWN_CHANCE_MAP = { # Spawn chance as a decimal percentage
-	Rarity.COMMON: 0.95,
-	Rarity.UNCOMMON: 0.80,
-	Rarity.RARE: 0.50,
-	Rarity.LEGENDARY: 0.25,
+	Rarity.COMMON: 0.50,
+	Rarity.UNCOMMON: 0.25,
+	Rarity.RARE: 0.10,
+	Rarity.LEGENDARY: 0.05,
 }
 
 # Variables

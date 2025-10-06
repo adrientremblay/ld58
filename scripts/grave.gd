@@ -15,6 +15,7 @@ class_name Grave extends CSGBox3D
 @onready var doll_scene: PackedScene = preload("res://scenes/doll.tscn")
 @onready var gauntlet_scene: PackedScene = preload("res://scenes/gauntlet.tscn")
 @onready var rat_scene: PackedScene = preload("res://scenes/rat.tscn")
+@onready var talisman_scene: PackedScene = preload("res://scenes/talisman.tscn")
 
 # Properties
 var grave_active = false
@@ -146,9 +147,13 @@ func spawn_artifacts() -> void:
 	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.SILVER_GAUNTLET].rarity] + spawn_chance_boost:
 		artifact_spawns[indexes_order[3]].add_child(gauntlet_scene.instantiate())
 	
-	# try and spawn a rat gauntlet
+	# try and spawn a rat
 	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.RAT].rarity] + spawn_chance_boost:
 		artifact_spawns[indexes_order[4]].add_child(rat_scene.instantiate())
+	
+	# try and spawn a talisman
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.TALISMAN].rarity] + spawn_chance_boost:
+		artifact_spawns[indexes_order[5]].add_child(talisman_scene.instantiate())
 
 func _on_mound_full_fully_uncovered() -> void:
 	spawn_artifacts()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=24 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://mdwsrivqmi5j" path="res://scenes/collection.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cf7uypcw7e3ks" path="res://scenes/mausoleum.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://b28bif71id67a" path="res://scenes/tree.tscn" id="13_trceg"]
-[ext_resource type="PackedScene" uid="uid://ya312puorjet" path="res://assets/models/talisman/talisman.glb" id="14_a8y0u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -925,9 +924,6 @@ transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 8.0200
 
 [node name="mausoleum6" parent="Mausoleums" instance=ExtResource("13_a8y0u")]
 transform = Transform3D(-1.58933e-08, 0, 1, 0, 1, 0, -1, 0, -1.58933e-08, 18.0961, 0.534095, 28.2501)
-
-[node name="talisman" parent="." instance=ExtResource("14_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0535, 0.534095, 10.5258)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]

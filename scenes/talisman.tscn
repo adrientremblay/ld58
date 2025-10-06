@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhkcpsubds05d"]
+
+[ext_resource type="PackedScene" uid="uid://ya312puorjet" path="res://assets/models/talisman/talisman.glb" id="1_ciwpv"]
+[ext_resource type="Script" uid="uid://t4g13cr70k5y" path="res://scripts/artifact.gd" id="2_8ttys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ttys"]
+size = Vector3(0.303772, 0.198692, 0.433594)
+
+[node name="talisman" groups=["artifact"] instance=ExtResource("1_ciwpv")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_8ttys")
+artifact_type = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00106812, 0.0687218, -0.0761719)
+shape = SubResource("BoxShape3D_8ttys")

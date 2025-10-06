@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/talisman.glb-f903b80033308e508418355b1f8fe23f
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="RigidBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=0.14

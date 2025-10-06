@@ -6,6 +6,7 @@ class_name ArtifactSpawner extends Area3D
 @onready var doll: PackedScene = preload("res://scenes/doll.tscn")
 @onready var gauntlet: PackedScene = preload("res://scenes/gauntlet.tscn")
 @onready var rat: PackedScene = preload("res://scenes/rat.tscn")
+@onready var talisman: PackedScene = preload("res://scenes/talisman.tscn")
 
 # Children
 @onready var artifact_name_label: Label3D = $ArtifactNameLabel
@@ -36,6 +37,9 @@ func _ready() -> void:
 		Global.ArtifactName.RAT:
 			spawn_artifact_scene = rat
 			artifact_name_label.text = "Dirty Rat"
+		Global.ArtifactName.TALISMAN:
+			spawn_artifact_scene = talisman
+			artifact_name_label.text = "Talisman"
 	
 	quantity_label.text = str(stock) + "x"
 	

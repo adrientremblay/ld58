@@ -71,23 +71,27 @@ surface_material_override/0 = SubResource("StandardMaterial3D_akiqc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.192938)
 
 [node name="ArtifactSpawner" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.022, 1.019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47719, -0.022, 1.019)
 artifact_type = 1
 
 [node name="ArtifactSpawner2" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.022, 1.019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16251, -0.022, 1.019)
 artifact_type = 2
 
 [node name="ArtifactSpawner3" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022, 1.019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.742345, -0.022, 1.019)
 artifact_type = 3
 
+[node name="ArtifactSpawner6" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99826, -0.022, 1.019)
+artifact_type = 6
+
 [node name="ArtifactSpawner4" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.022, 1.019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33568, -0.022, 1.019)
 artifact_type = 4
 
 [node name="ArtifactSpawner5" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.022, 1.019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777387, -0.022, 1.019)
 artifact_type = 5
 
 [node name="Label3D" type="Label3D" parent="."]

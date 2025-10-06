@@ -8,6 +8,7 @@ enum ArtifactName {
 	DOLL,
 	SILVER_GAUNTLET,
 	RAT,
+	TALISMAN,
 }
 
 enum Rarity {
@@ -30,21 +31,21 @@ const ARTIFACT_DATA = {
 		"name": "Doll",
 		"value": 10.0,
 		"rarity": Rarity.RARE,
-		"effect": "Copies the effect of the artifact to the immediate right",
+		"effect": "Copies effect of the artifact to the immediate right",
 		"number": 0.0
 	},
 	ArtifactName.GOLD_RING: {
 		"name": "Gold Ring",
 		"value": 25.0,
 		"rarity": Rarity.COMMON,
-		"effect": "Increases likelihood of finding artifacts in coffins by 5%",
+		"effect": "Increases likelihood of finding artifacts by 5%",
 		"number": 0.05
 	},
 	ArtifactName.SILVER_GAUNTLET: {
 		"name": "Silver Gauntlet",
 		"value": 200.0,
 		"rarity": Rarity.LEGENDARY,
-		"effect": "Multiplies the dig speed by 150%",
+		"effect": "Multiplies dig speed by 150%",
 		"number": 1.50
 	},
 	ArtifactName.RAT: {
@@ -53,6 +54,13 @@ const ARTIFACT_DATA = {
 		"rarity": Rarity.UNCOMMON,
 		"effect": "Adds 20% to movement speed",
 		"number": 0.20
+	},
+	ArtifactName.TALISMAN: {
+		"name": "Talisman",
+		"value": 100.0,
+		"rarity": Rarity.COMMON,
+		"effect": "Multiplies the likelihood of finding artifacts by 110%", # might be OP
+		"number": 1.10
 	}
 }
 

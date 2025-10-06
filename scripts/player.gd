@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody3D
 
 # Constants
-const SPEED = 5.0
+const SPEED = 4.0
 const SPRINT_MULTIPLIER = 1.4
 const JUMP_VELOCITY = 4.5
 const CAMERA_MAX_ANGLE = 80
@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# TODO As good practice, you should replace UI actions with custom gameplay actions.
 	var final_speed = SPEED
+	# sprinting
 	if sprinting:
 		if stamina > 0.0:
 			final_speed *= SPRINT_MULTIPLIER
@@ -66,6 +67,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		stamina += delta * STAMINA_DRAIN
 		stamina = min(100.0, stamina)
+	# speed modifiers due to upgrades
+	var base_speed_modif = 1.0
+	for i in range(0, Global.active_upgrades.size()):
+		var artifact_name = Global.active_upgrades[i]
+		if artifact_name == Global.ArtifactName.RAT:
+			base_speed_modif += Global.ARTIFACT_DATA[Global.ArtifactName.RAT].number
+	final_speed *= base_speed_modif
 	
 	if not looking_in_grave and not looking_at_collection:	
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

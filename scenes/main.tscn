@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=23 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -41,11 +41,14 @@ albedo_color = Color(0.18894, 0.276046, 0.0938407, 1)
 albedo_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
-font_size = 34
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_eb6dy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ya4ey"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_trceg"]
 font_size = 20
 
 [node name="Main" type="Node3D"]
@@ -767,6 +770,27 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 text = "Press F to Pay Respect"
 label_settings = SubResource("LabelSettings_ya4ey")
+
+[node name="AnchorBottomRight" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HelpLabel" type="Label" parent="HUD/AnchorBottomRight"]
+layout_mode = 2
+text = "sample text"
+label_settings = SubResource("LabelSettings_trceg")
 
 [node name="Groundskeeper" parent="." node_paths=PackedStringArray("patrol_route", "player") instance=ExtResource("8_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8896, 0.52997, 5.94705)

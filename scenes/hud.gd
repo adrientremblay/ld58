@@ -5,11 +5,16 @@ extends Control
 @onready var artifact_panel: PanelContainer = $ArtifactPanel
 @onready var interact_label: Label = $MarginBottom/InteractLabel
 @onready var rarity_label: Label = $ArtifactPanel/VBoxContainer/HBoxContainer/RarityLabel
+@onready var help_label : Label = $AnchorBottomRight/HelpLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	artifact_panel.visible = false
 	interact_label.text = ""
+	help_label.text = "[W,S,A,D] - Move
+						[SHIFT] - Sprint
+						[E] - Dig Up Grave
+						[C] - View Collection"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -50,3 +55,6 @@ func _on_player_player_can_interact(interact_message: String) -> void:
 
 func _on_player_player_can_no_longer_interact() -> void:
 	interact_label.text = ""
+
+func _input(event: InputEvent) -> void:
+	pass

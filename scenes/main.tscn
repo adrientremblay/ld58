@@ -634,6 +634,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99866, 0.534095, 15.5143)
 [node name="tree2" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6841, 0.534095, -0.550098)
 
+[node name="tree" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8742, 0.534096, 10.3562)
+
+[node name="tree2" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6491, 0.534095, 30.2167)
+
+[node name="tree3" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6922, 0.534095, -36.4539)
+
+[node name="tree4" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.3111, 0.534095, -11.938)
+
+[node name="tree5" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00297, 0.534095, -13.2239)
+
+[node name="tree6" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8091, 0.534093, -6.81071)
+
+[node name="tree7" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70328, 0.534095, 20.0314)
+
+[node name="tree8" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6322, 0.534095, -3.01155)
+
+[node name="tree9" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3592, 0.534095, 19.3873)
+
+[node name="tree10" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8107, 0.534095, -29.43)
+
+[node name="tree11" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3763, 0.534095, 16.5372)
+
+[node name="tree12" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.9508, 0.534095, -4.92404)
+
+[node name="tree13" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.244, 0.534095, 40.5715)
+
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]
 [connection signal="player_can_interact" from="Player" to="HUD" method="_on_player_player_can_interact"]

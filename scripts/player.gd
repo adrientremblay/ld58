@@ -89,8 +89,10 @@ func _input(event: InputEvent) -> void:
 				var grave_interaction_area: GraveInteractionArea = area
 				toggle_looking_in_grave(grave_interaction_area.grave)
 				player_can_no_longer_interact.emit()
+				break
 			elif area.is_in_group("gate"):
 				leave.emit()
+				break
 	if event.is_action_pressed("collection") and not looking_in_grave:
 		looking_at_collection = not looking_at_collection
 	if event.is_action_pressed("sprint") and stamina > 0.0:

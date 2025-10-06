@@ -15,6 +15,24 @@
 radius = 0.352791
 height = 2.27335
 
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "run"
+length = 0.357
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_random_footstep"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_fjrip"]
 resource_name = "walk"
 length = 0.5
@@ -51,24 +69,6 @@ tracks/0/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_smehm"]
-resource_name = "run"
-length = 0.357
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_random_footstep"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_smehm"]
 _data = {
 &"run": SubResource("Animation_smehm"),
@@ -84,23 +84,22 @@ height = 7.42391
 script = ExtResource("2_8sy0d")
 
 [node name="Skeleton3D" parent="ComponentArmature" index="0"]
-bones/0/position = Vector3(0, -1.20684, 0.0934316)
 bones/3/rotation = Quaternion(0.253401, 0, 0, 0.967361)
 bones/4/rotation = Quaternion(0.0340333, 0.00158765, 0.817032, 0.575585)
-bones/5/rotation = Quaternion(0.128084, 0.127202, 0.395807, 0.900417)
-bones/6/rotation = Quaternion(0.0103674, 0.000564867, 0.155036, 0.987854)
+bones/5/rotation = Quaternion(0.00813545, 0.00280688, 0.412198, 0.911054)
+bones/6/rotation = Quaternion(0.0103674, 0.000564868, 0.155036, 0.987854)
 bones/8/rotation = Quaternion(-0.485851, -0.250263, -0.206079, 0.811695)
 bones/9/rotation = Quaternion(-0.244876, -0.181234, 0.326285, 0.894834)
 bones/10/rotation = Quaternion(-0.00188639, 0.00165858, -0.687773, 0.725922)
-bones/12/position = Vector3(2.48645e-08, -1.20684, 0.0934316)
-bones/12/rotation = Quaternion(0.70332, 0.257682, 0.658483, 0.0730795)
-bones/13/rotation = Quaternion(-0.12894, -0.0116954, -0.0831651, 0.98809)
-bones/14/position = Vector3(-1.30572e-08, -1.20684, 0.0934316)
-bones/14/rotation = Quaternion(-0.650307, -0.0607989, 0.704488, 0.277669)
-bones/15/rotation = Quaternion(-0.161823, 0.0172274, 0.111072, 0.980398)
+bones/12/position = Vector3(1.0952e-08, -1.16866, 0.0934316)
+bones/12/rotation = Quaternion(0.700698, 0.094985, 0.700698, -0.0949849)
+bones/13/rotation = Quaternion(-0.129397, -1.13786e-07, -4.16773e-08, 0.991593)
+bones/14/position = Vector3(-2.94648e-08, -1.16866, 0.0934316)
+bones/14/rotation = Quaternion(-0.698217, 0.111768, 0.698218, 0.111768)
+bones/15/rotation = Quaternion(-0.162855, 5.84575e-08, 9.32922e-08, 0.98665)
 
 [node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.26533, -0.555654)
+transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.22715, -0.555654)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
 light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)

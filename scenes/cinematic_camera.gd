@@ -1,7 +1,7 @@
 extends Camera3D
 
 # Constants
-const RADIUS: float = 7.0
+const RADIUS: float = 4.0
 
 const SCRIPT = [
 	[0.0, PI/6],

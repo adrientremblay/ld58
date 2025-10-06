@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mmc3dtpcmhky"]
+
+[ext_resource type="PackedScene" uid="uid://3dr8mjulsa5l" path="res://assets/models/title/title.glb" id="1_4ignj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wosw1"]
+albedo_color = Color(0.67, 0.1139, 0.1139, 1)
+
+[node name="title" instance=ExtResource("1_4ignj")]
+
+[node name="Thicc" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wosw1")

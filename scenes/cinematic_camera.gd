@@ -4,10 +4,10 @@ extends Camera3D
 
 # Theta, Phi, Radius
 const SCRIPT = [
-	[PI, PI/6, 3.0],
-	[0.0, PI/3, 3.0],
-	[PI, PI/3, 3.0],
-	[0.0, PI/6, 3.0]
+	[PI, PI/6, 5.0],
+	[0.0, PI/3, 5.0],
+	[PI, PI/3, 5.0],
+	[0.0, PI/6, 5.0]
 ]
 
 # Properties

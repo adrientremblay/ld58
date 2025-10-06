@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ds6mh8mmwx4tb"]
+[gd_scene load_steps=13 format=3 uid="uid://ds6mh8mmwx4tb"]
 
 [ext_resource type="Script" uid="uid://ddppmuqonbssj" path="res://scenes/title_screen.gd" id="1_s4lrb"]
 [ext_resource type="Script" uid="uid://brjvifunpfgkh" path="res://scenes/cinematic_camera.gd" id="1_sa3yf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c34otpyaoqehk" path="res://scenes/grave.tscn" id="5_e54dn"]
 [ext_resource type="PackedScene" uid="uid://caxutgouov8ur" path="res://scenes/groundskeeper_static.tscn" id="6_3yumr"]
 [ext_resource type="PackedScene" uid="uid://byllmdfbep8ih" path="res://assets/models/shovel/static_shovel.glb" id="6_e54dn"]
+[ext_resource type="PackedScene" uid="uid://mmc3dtpcmhky" path="res://scenes/title.tscn" id="7_3yumr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1a2ex"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -56,3 +57,6 @@ transform = Transform3D(0.617443, 0.235028, 0.231357, 0, 0.491063, -0.498856, -0
 
 [node name="Groundskeeper" parent="." instance=ExtResource("6_3yumr")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="title" parent="." instance=ExtResource("7_3yumr")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.7559, -1.83301)

@@ -56,6 +56,9 @@ func fill_artifact_container(artifact: Artifact):
 		Global.Rarity.RARE:
 			rarity_label.text = "Rare"
 			rarity_label.label_settings.font_color = Color.TOMATO
+		Global.Rarity.LEGENDARY:
+			rarity_label.text = "Legendary"
+			rarity_label.label_settings.font_color = Color.RED
 	
 	effect_label.text = artifact.effect
 

@@ -99,6 +99,7 @@ func _input(event: InputEvent) -> void:
 				var grave_interaction_area: GraveInteractionArea = area
 				toggle_looking_in_grave(grave_interaction_area.grave)
 				player_can_no_longer_interact.emit()
+				velocity = Vector3.ZERO
 				break
 			elif area.is_in_group("gate"):
 				leave.emit()

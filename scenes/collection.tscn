@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mdwsrivqmi5j"]
+[gd_scene load_steps=11 format=3 uid="uid://mdwsrivqmi5j"]
 
 [ext_resource type="Script" uid="uid://dw6rqarheryem" path="res://scripts/collection.gd" id="1_eqlcu"]
 [ext_resource type="PackedScene" uid="uid://86h7rakhb615" path="res://scenes/artifact_spawner.tscn" id="3_akiqc"]
@@ -10,13 +10,25 @@ size = Vector3(11.9337, 0.477539, 9.16559)
 [sub_resource type="PlaneMesh" id="PlaneMesh_m8hiy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akiqc"]
-albedo_color = Color(0.46, 0.4002, 0.161, 1)
+albedo_color = Color(0.19, 0.16226, 0.0513, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_akiqc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8hiy"]
+albedo_color = Color(0.081748, 0.12073, 0.0602505, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tdt8g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdt8g"]
+albedo_color = Color(0.18, 0.07122, 0.0468, 1)
 
 [node name="Collection" type="Node3D"]
 script = ExtResource("1_eqlcu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.13508, 0)
+projection = 1
+size = 4.81374
 
 [node name="Floor" type="StaticBody3D" parent="."]
 collision_layer = 2
@@ -36,19 +48,19 @@ omni_range = 10.1826
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.665298)
 
 [node name="ArtifactSlot" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5471, 0, -1.42639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.426)
 
 [node name="ArtifactSlot2" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0904615, 0, -1.42639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.426)
 
 [node name="ArtifactSlot3" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11424, 0, -1.42639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.426)
 
 [node name="ArtifactSlot4" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03592, 0, -1.42639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.426)
 
 [node name="ArtifactSlot5" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36754, 0, -1.42639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.426)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.236858, 0)
@@ -56,19 +68,42 @@ mesh = SubResource("PlaneMesh_m8hiy")
 surface_material_override/0 = SubResource("StandardMaterial3D_akiqc")
 
 [node name="ArtifactSpawners" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.520391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.192938)
 
 [node name="ArtifactSpawner" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36907, -0.0224609, 1.01907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.022, 1.019)
 
 [node name="ArtifactSpawner2" parent="ArtifactSpawners" instance=ExtResource("3_akiqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5582, -0.0224609, 1.01907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.022, 1.019)
 artifact_type = 1
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.76136)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.10753)
 text = "Collection"
 font_size = 70
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, -0.101878, -1.01219)
+mesh = SubResource("PlaneMesh_akiqc")
+surface_material_override/0 = SubResource("StandardMaterial3D_m8hiy")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101878, 1.22221)
+mesh = SubResource("PlaneMesh_tdt8g")
+surface_material_override/0 = SubResource("StandardMaterial3D_tdt8g")
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.09384, 0, -1.68204)
+text = "Equipped Artifacts"
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.02041, 0, 0.457951)
+text = "Available Artifacts"
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.70554, 0, -1.42219)
+text = "Artifacts placed here will have their effects apply (from left to right)"
+font_size = 26
 
 [connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
 [connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot2" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]

@@ -152,6 +152,41 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.09
 size = Vector3(23.9142, 1, 1.92432)
 material = SubResource("StandardMaterial3D_tipki")
 
+[node name="Path5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30.6352, 0.0485328, -4.14184)
+size = Vector3(18.6039, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
+[node name="Path6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -28.6727, 0.0485328, -14.9539)
+size = Vector3(6.3205, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
+[node name="Path7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -16.4576, 0.0485328, -16.8705)
+size = Vector3(21.3681, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
+[node name="Path8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -1.86634, 0.0485328, -12.5115)
+size = Vector3(12.975, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
+[node name="Path9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 8.37746, 0.0485328, -8.19659)
+size = Vector3(12.6648, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
+[node name="Path10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 17.1649, 0.0403477, -13.5096)
+size = Vector3(13.3776, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
+[node name="Path11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.7423, 0.0485328, -1.10766)
+size = Vector3(12.5356, 1, 1.92432)
+material = SubResource("StandardMaterial3D_tipki")
+
 [node name="Fences" type="Node3D" parent="."]
 
 [node name="fence_complete" parent="Fences" instance=ExtResource("6_tefeu")]

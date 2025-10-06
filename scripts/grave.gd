@@ -12,6 +12,7 @@ class_name Grave extends CSGBox3D
 @onready var pocket_watch_scene: PackedScene = preload("res://assets/models/pocket_watch/pocket_watch.tscn")
 @onready var ring_scene: PackedScene = preload("res://scenes/ring.tscn")
 @onready var doll_scene: PackedScene = preload("res://scenes/doll.tscn")
+@onready var gauntlet_scene: PackedScene = preload("res://scenes/gauntlet.tscn")
 
 # Properties
 var grave_active = false
@@ -107,7 +108,7 @@ func shoot_ray() -> Dictionary:
 
 func spawn_artifacts() -> void:
 	var artifact_spawns: Array[Node] = artifact_spawns_node.get_children()
-	var indexes_order = range(0, artifact_spawns.size()-1) # indexes to spawn stuff in
+	var indexes_order = range(0, artifact_spawns.size()) # indexes to spawn stuff in
 	indexes_order.shuffle() # randomize the list
 	var current_index = 0
 	
@@ -130,6 +131,10 @@ func spawn_artifacts() -> void:
 	# try and spawn a ring
 	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity] + spawn_chance_boost:
 		artifact_spawns[indexes_order[2]].add_child(ring_scene.instantiate())
+	
+	# try and spawn a silver gauntlet
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.SILVER_GAUNTLET].rarity] + spawn_chance_boost:
+		artifact_spawns[indexes_order[3]].add_child(gauntlet_scene.instantiate())
 
 func _on_mound_full_fully_uncovered() -> void:
 	spawn_artifacts()

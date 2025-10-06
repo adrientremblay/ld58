@@ -5,7 +5,8 @@ enum ArtifactName {
 	NOTHING, # Does nothing (no effect)
 	POCKET_WATCH,
 	GOLD_RING,
-	DOLL
+	DOLL,
+	SILVER_GAUNTLET,
 }
 
 enum Rarity {
@@ -36,6 +37,13 @@ const ARTIFACT_DATA = {
 		"rarity": Rarity.RARE,
 		"effect": "Increases likelihood of finding artifacts in coffins by 5%",
 		"number": 0.05
+	},
+	ArtifactName.SILVER_GAUNTLET: {
+		"name": "Silver Gauntlet",
+		"value": 200.0,
+		"rarity": Rarity.COMMON,
+		"effect": "Multiplies the dig speed by 150%",
+		"number": 1.50
 	}
 }
 

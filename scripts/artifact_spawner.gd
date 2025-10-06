@@ -4,6 +4,7 @@ class_name ArtifactSpawner extends Area3D
 @onready var pocket_watch_scene: PackedScene = preload("res://assets/models/pocket_watch/pocket_watch.tscn")
 @onready var gold_ring: PackedScene = preload("res://scenes/ring.tscn")
 @onready var doll: PackedScene = preload("res://scenes/doll.tscn")
+@onready var gauntlet: PackedScene = preload("res://scenes/gauntlet.tscn")
 
 # Children
 @onready var artifact_name_label: Label3D = $ArtifactNameLabel
@@ -28,6 +29,9 @@ func _ready() -> void:
 		Global.ArtifactName.DOLL:
 			spawn_artifact_scene = doll
 			artifact_name_label.text = "Doll"
+		Global.ArtifactName.SILVER_GAUNTLET:
+			spawn_artifact_scene = gauntlet
+			artifact_name_label.text = "Silver Gauntlet"
 	
 	quantity_label.text = str(stock) + "x"
 	

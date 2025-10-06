@@ -20,13 +20,13 @@ ground_bottom_color = Color(0.0109173, 0.0216742, 0.00884749, 1)
 ground_horizon_color = Color(0, 0, 0, 1)
 sun_angle_max = 7.2
 
-[sub_resource type="Sky" id="Sky_tefeu"]
+[sub_resource type="Sky" id="Sky_eb6dy"]
 sky_material = SubResource("ProceduralSkyMaterial_tbgi4")
 
 [sub_resource type="Environment" id="Environment_tbgi4"]
 background_mode = 2
 background_color = Color(1, 1, 1, 1)
-sky = SubResource("Sky_tefeu")
+sky = SubResource("Sky_eb6dy")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05

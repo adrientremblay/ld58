@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if artifact:
 		artifact.global_position = self.global_position
+		artifact.rotate_y(delta)
 
 func increment_stock() -> void:
 	stock += 1

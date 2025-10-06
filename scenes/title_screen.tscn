@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds6mh8mmwx4tb"]
+
+[ext_resource type="PackedScene" uid="uid://fl8w6k3eluok" path="res://assets/models/groundskeeper/groundskeeper.glb" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://brjvifunpfgkh" path="res://scenes/cinematic_camera.gd" id="1_sa3yf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1a2ex"]
+sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
+sky_horizon_color = Color(0.0365652, 0.0386032, 0.0419114, 1)
+ground_bottom_color = Color(0.0109173, 0.0216742, 0.00884749, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+sun_angle_max = 7.2
+
+[sub_resource type="Sky" id="Sky_tefeu"]
+sky_material = SubResource("ProceduralSkyMaterial_1a2ex")
+
+[sub_resource type="Environment" id="Environment_fgkus"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_tefeu")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sa3yf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a2ex"]
+albedo_color = Color(0.18894, 0.276046, 0.0938407, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fgkus")
+
+[node name="FloorMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_sa3yf")
+surface_material_override/0 = SubResource("StandardMaterial3D_1a2ex")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28269, 0)
+omni_range = 2.24767
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.989597, 2.519)
+script = ExtResource("1_sa3yf")
+
+[node name="Groundskeeper" parent="." instance=ExtResource("1_fgkus")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

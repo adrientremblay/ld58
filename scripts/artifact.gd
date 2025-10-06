@@ -15,11 +15,13 @@ var dragging = false
 var artifact_name: String
 var value: float
 var rarity: Global.Rarity
+var effect: String #for hud only
 
 func _ready() -> void:
 	artifact_name = Global.ARTIFACT_DATA[artifact_type].name
 	value = Global.ARTIFACT_DATA[artifact_type].value
 	rarity = Global.ARTIFACT_DATA[artifact_type].rarity
+	effect = Global.ARTIFACT_DATA[artifact_type].effect
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("click") and dragging:

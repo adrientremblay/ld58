@@ -5,6 +5,7 @@ extends Control
 @onready var artifact_panel: PanelContainer = $ArtifactPanel
 @onready var interact_label: Label = $MarginBottom/InteractLabel
 @onready var rarity_label: Label = $ArtifactPanel/VBoxContainer/HBoxContainer/RarityLabel
+@onready var effect_label : Label = $ArtifactPanel/VBoxContainer/HBoxContainer2/EffectLabel
 @onready var help_label : Label = $AnchorBottomRight/HelpLabel
 
 # Constants
@@ -55,6 +56,8 @@ func fill_artifact_container(artifact: Artifact):
 		Global.Rarity.RARE:
 			rarity_label.text = "Rare"
 			rarity_label.label_settings.font_color = Color.TOMATO
+	
+	effect_label.text = artifact.effect
 
 func _on_player_player_can_interact(interact_message: String) -> void:
 	interact_label.text = interact_message

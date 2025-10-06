@@ -749,6 +749,17 @@ layout_mode = 2
 text = "Common"
 label_settings = SubResource("LabelSettings_eb6dy")
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/ArtifactPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/ArtifactPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Effect: "
+
+[node name="EffectLabel" type="Label" parent="HUD/ArtifactPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Effect..."
+
 [node name="SellArtifactSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource("5_tbgi4")
 

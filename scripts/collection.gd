@@ -11,6 +11,9 @@ var collection_active: bool = false
 # Constants
 const RAY_LENGTH = 500
 
+# Signal
+signal move_artifact_label_to_cursor(artifact: Artifact) # this is a copy from the one in the grave
+
 # TODO: This is silly
 # Exports
 @export var player: Player
@@ -23,12 +26,13 @@ func _input(event: InputEvent) -> void:
 			collection_active = false
 			collection_camera.current = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			move_artifact_label_to_cursor.emit(null)
 		else:
 			collection_active = true
 			collection_camera.current = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-# TODO get this working
+
 func _unhandled_input(event: InputEvent) -> void:
 	if collection_active and event is InputEventMouseMotion:
 		# Casting the ray
@@ -38,14 +42,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			if result.collider.is_in_group("artifact"):
 				var artifact: Artifact = result.collider
 				if artifact.dragging:
-					#move_artifact_label_to_cursor.emit(null)
+					move_artifact_label_to_cursor.emit(null)
 					return
-				#move_artifact_label_to_cursor.emit(artifact)
-			#else:
-				#move_artifact_label_to_cursor.emit(null)
-		#else:
-				#move_artifact_label_to_cursor.emit(null)
-				
+				move_artifact_label_to_cursor.emit(artifact)
+			else:
+				move_artifact_label_to_cursor.emit(null)
+		else:
+				move_artifact_label_to_cursor.emit(null)
 
 func shoot_ray() -> Dictionary:
 	# Determine what a raycast vector pointing straight down should be on top of the cursor

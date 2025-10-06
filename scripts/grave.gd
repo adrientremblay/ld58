@@ -29,6 +29,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and grave_active:
 		pickup_item()
+	if event.is_action_pressed("interact"):
+		if not grave_active:
+			move_artifact_label_to_cursor.emit(null)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if grave_active and event is InputEventMouseMotion:

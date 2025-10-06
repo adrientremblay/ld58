@@ -78,3 +78,6 @@ func _on_player_player_looks_in_grave() -> void:
 
 func _on_player_player_stops_looking_in_grave() -> void:
 	help_label.text = main_text
+
+func _on_collection_move_artifact_label_to_cursor(artifact: Artifact) -> void:
+	_on_grave_move_artifact_label_to_cursor(artifact)

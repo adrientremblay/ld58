@@ -1007,3 +1007,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.244, 0.534095, 40.5715)
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave5" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
 [connection signal="collect_artifact" from="CSGCombiner3D/Grave6" to="." method="_on_grave_collect_artifact"]
 [connection signal="move_artifact_label_to_cursor" from="CSGCombiner3D/Grave6" to="HUD" method="_on_grave_move_artifact_label_to_cursor"]
+[connection signal="move_artifact_label_to_cursor" from="Collection" to="HUD" method="_on_collection_move_artifact_label_to_cursor"]

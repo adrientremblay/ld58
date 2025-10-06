@@ -14,9 +14,6 @@ var main_text: String = "[W,S,A,D] - Move
 						[E] - Dig Up Grave
 						[C] - View Collection"
 
-# Properties TODO this is kinda dumb
-var looking_at_collection: bool = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	artifact_panel.visible = false
@@ -68,15 +65,6 @@ func _on_player_player_can_interact(interact_message: String) -> void:
 func _on_player_player_can_no_longer_interact() -> void:
 	interact_label.text = ""
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("collection"):
-		looking_at_collection = not looking_at_collection
-		if looking_at_collection:
-			help_label.text = "[MOUSE] - Drag and drop artifacts
-							[C] - Leave Collection"
-		else:
-			help_label.text = main_text
-
 func _on_player_player_looks_in_grave() -> void:
 	help_label.text = "[MOUSE] - Drag and drop artifacts
 						[MOUSE] - Drag and drop shovel to use it
@@ -87,3 +75,11 @@ func _on_player_player_stops_looking_in_grave() -> void:
 
 func _on_collection_move_artifact_label_to_cursor(artifact: Artifact) -> void:
 	_on_grave_move_artifact_label_to_cursor(artifact)
+
+
+func _on_collection_looking_in_collection() -> void:
+	help_label.text = "[MOUSE] - Drag and drop artifacts
+					[C] - Leave Collection"
+
+func _on_collection_no_longer_looking_in_collection() -> void:
+	help_label.text = main_text

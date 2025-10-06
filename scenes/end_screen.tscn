@@ -51,4 +51,5 @@ horizontal_alignment = 1
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_6e1uj")
+volume_db = -10.0
 autoplay = true

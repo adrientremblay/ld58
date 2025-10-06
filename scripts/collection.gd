@@ -13,6 +13,9 @@ const RAY_LENGTH = 500
 
 # Signal
 signal move_artifact_label_to_cursor(artifact: Artifact) # this is a copy from the one in the grave
+signal looking_in_collection
+signal no_longer_looking_in_collection
+
 
 # TODO: This is silly
 # Exports
@@ -27,11 +30,12 @@ func _input(event: InputEvent) -> void:
 			collection_camera.current = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			move_artifact_label_to_cursor.emit(null)
+			no_longer_looking_in_collection.emit()
 		else:
 			collection_active = true
 			collection_camera.current = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+			looking_in_collection.emit()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if collection_active and event is InputEventMouseMotion:

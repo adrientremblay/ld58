@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if current_mode == Mode.PATROLLING:
 		var direction = patrol_route[patrol_node_index].global_position - global_position
 		direction.y = 0
-		if direction.length() < 0.01:
+		if direction.length() < 0.03:
 			current_mode = Mode.IDLING
 			idle_timer.start()
 			animation_player.play("Idle")

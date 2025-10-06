@@ -112,7 +112,6 @@ func spawn_artifacts() -> void:
 	for artifact_name: Global.ArtifactName in Global.active_upgrades:
 		if artifact_name == Global.ArtifactName.GOLD_RING:
 			spawn_chance_boost += 0.05
-			Screen.print("spawn chance boost= " + str(spawn_chance_boost))
 	
 	# try and spawn pocket watch
 	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity] + spawn_chance_boost:

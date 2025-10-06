@@ -773,6 +773,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8896, 0.52997, 5.94705)
 patrol_route = [NodePath("../PatrolNodes/Node3D"), NodePath("../PatrolNodes/Node3D2"), NodePath("../PatrolNodes/Node3D4"), NodePath("../PatrolNodes/Node3D3")]
 player = NodePath("../Player")
 
+[node name="Groundskeeper2" parent="." node_paths=PackedStringArray("patrol_route", "player") instance=ExtResource("8_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0158, 0.52997, -20.1737)
+patrol_route = [NodePath("../PatrolNodes/Node3D5"), NodePath("../PatrolNodes/Node3D6"), NodePath("../PatrolNodes/Node3D7"), NodePath("../PatrolNodes/Node3D8"), NodePath("../PatrolNodes/Node3D9"), NodePath("../PatrolNodes/Node3D10"), NodePath("../PatrolNodes/Node3D11"), NodePath("../PatrolNodes/Node3D10"), NodePath("../PatrolNodes/Node3D9"), NodePath("../PatrolNodes/Node3D8"), NodePath("../PatrolNodes/Node3D7"), NodePath("../PatrolNodes/Node3D6")]
+player = NodePath("../Player")
+
 [node name="PatrolNodes" type="Node3D" parent="."]
 
 [node name="Node3D" type="Node3D" parent="PatrolNodes"]
@@ -786,6 +791,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1446, 0, 5.72563)
 
 [node name="Node3D4" type="Node3D" parent="PatrolNodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0521, 0, 28.0397)
+
+[node name="Node3D5" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9906, 0, -18.6259)
+
+[node name="Node3D6" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.805, 0, -8.10403)
+
+[node name="Node3D7" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62676, 0, -8.10403)
+
+[node name="Node3D8" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18161, 0, -16.9645)
+
+[node name="Node3D9" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6025, 0, -16.9645)
+
+[node name="Node3D10" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9328, 0, -12.7467)
+
+[node name="Node3D11" type="Node3D" parent="PatrolNodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9328, 0, 6.35944)
 
 [node name="NightAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_choun")

@@ -42,9 +42,11 @@ func _physics_process(delta: float) -> void:
 func dig() -> void:
 	# determine what the speed scale should be based on the equipped artifacts
 	var speed_scale: float = 1.0
-	for artifact_name: Global.ArtifactName in Global.active_upgrades:
+	for i in range(0, Global.active_upgrades.size()):
+		var artifact_name = Global.active_upgrades[i]
 		if artifact_name == Global.ArtifactName.POCKET_WATCH:
 			speed_scale *= 1.5
+	#Screen.print("Speed scale=" + str(speed_scale))
 	
 	animation_player.speed_scale = speed_scale
 	animation_player.play("dig")

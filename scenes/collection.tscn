@@ -47,6 +47,9 @@ omni_range = 10.1826
 [node name="ArtifactSlots" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.665298)
 
+[node name="ArtifactSlot5" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.426)
+
 [node name="ArtifactSlot" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.426)
 
@@ -58,9 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.426)
 
 [node name="ArtifactSlot4" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.426)
-
-[node name="ArtifactSlot5" parent="ArtifactSlots" instance=ExtResource("3_m8hiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.426)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.236858, 0)
@@ -110,8 +110,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.705
 text = "Artifacts placed here will have their effects apply (from left to right)"
 font_size = 26
 
+[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot5" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
 [connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
 [connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot2" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
 [connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot3" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
 [connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot4" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]
-[connection signal="should_update_global_equipped_artifacts_list" from="ArtifactSlots/ArtifactSlot5" to="." method="_on_artifact_slot_should_update_global_equipped_artifacts_list"]

@@ -77,10 +77,16 @@ func add_to_collection(artifact_type: Global.ArtifactName):
 			artifact_spawner.increment_stock()
 
 func _on_artifact_slot_should_update_global_equipped_artifacts_list() -> void:
-	for i in range(0, artifact_slots.size()):
+	for i in range(artifact_slots.size()-1, -1, -1):
 		var artifact_slot : ArtifactSlot = artifact_slots[i]
 		var artifact = artifact_slot.artifact
 		if artifact:
 			Global.active_upgrades[i] = artifact.artifact_type
+			if artifact.artifact_type == Global.ArtifactName.DOLL:
+				if i < artifact_slots.size()-1:
+					Global.active_upgrades[i] = Global.active_upgrades[i+1]
+				else:
+					Global.active_upgrades[i] = Global.ArtifactName.NOTHING
 		else:
 			Global.active_upgrades[i] = Global.ArtifactName.NOTHING
+	#Screen.print(Global.active_upgrades)

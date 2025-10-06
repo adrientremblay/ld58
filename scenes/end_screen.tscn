@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://byhlaw4061qie"]
+[gd_scene load_steps=6 format=3 uid="uid://byhlaw4061qie"]
 
 [ext_resource type="Script" uid="uid://cjsccuvtipnkk" path="res://scripts/end_screen.gd" id="1_kq7ac"]
+[ext_resource type="AudioStream" uid="uid://c7wakaq0pbibq" path="res://assets/audio/title_music.mp3" id="2_6e1uj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pddrx"]
 bg_color = Color(0, 0, 0, 1)
@@ -47,3 +48,7 @@ layout_mode = 2
 text = "You stole 40$ worth of artifacts"
 label_settings = SubResource("LabelSettings_6e1uj")
 horizontal_alignment = 1
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6e1uj")
+autoplay = true

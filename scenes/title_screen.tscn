@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds6mh8mmwx4tb"]
+[gd_scene load_steps=14 format=3 uid="uid://ds6mh8mmwx4tb"]
 
 [ext_resource type="Script" uid="uid://ddppmuqonbssj" path="res://scenes/title_screen.gd" id="1_s4lrb"]
 [ext_resource type="Script" uid="uid://brjvifunpfgkh" path="res://scenes/cinematic_camera.gd" id="1_sa3yf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://caxutgouov8ur" path="res://scenes/groundskeeper_static.tscn" id="6_3yumr"]
 [ext_resource type="PackedScene" uid="uid://byllmdfbep8ih" path="res://assets/models/shovel/static_shovel.glb" id="6_e54dn"]
 [ext_resource type="PackedScene" uid="uid://mmc3dtpcmhky" path="res://scenes/title.tscn" id="7_3yumr"]
+[ext_resource type="AudioStream" uid="uid://c7wakaq0pbibq" path="res://assets/audio/title_music.mp3" id="8_cs5ya"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1a2ex"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -145,6 +146,10 @@ text = "Controls"
 [node name="StartGameButton" type="Button" parent="AnchorBottom"]
 layout_mode = 2
 text = "Start Game"
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_cs5ya")
+autoplay = true
 
 [connection signal="pressed" from="AnchorBottom/LoreButton" to="." method="_on_lore_button_pressed"]
 [connection signal="pressed" from="AnchorBottom/InstructionsButton" to="." method="_on_instructions_button_pressed"]

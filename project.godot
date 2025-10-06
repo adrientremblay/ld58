@@ -17,17 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Screen="*res://addons/screen_print/screen.gd"
 Global="*res://scripts/global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/screen_print/plugin.cfg")
 
 [global_group]
 

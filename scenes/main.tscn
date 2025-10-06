@@ -41,7 +41,7 @@ albedo_color = Color(0.18894, 0.276046, 0.0938407, 1)
 albedo_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
-font_size = 40
+font_size = 34
 
 [sub_resource type="LabelSettings" id="LabelSettings_eb6dy"]
 

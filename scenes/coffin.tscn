@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bksmbe5baxh0p" path="res://assets/models/skeleton/skeleton.glb" id="3_oylmm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fe18d"]
-albedo_color = Color(0.829515, 0.639597, 0.412274, 1)
+albedo_color = Color(0.509804, 0.396078, 0.254902, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o11qi"]
-albedo_color = Color(0.831373, 0.639216, 0.411765, 1)
+albedo_color = Color(0.51, 0.39525, 0.255, 1)
 
 [node name="Coffin" instance=ExtResource("1_fe18d")]
 script = ExtResource("2_o11qi")

@@ -114,6 +114,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.559138)
 [node name="Spawn4" type="Node3D" parent="ArtifactSpawns"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69324, 0, 0.559138)
 
+[node name="Spawn5" type="Node3D" parent="ArtifactSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506606, 0, 0.864249)
+
+[node name="Spawn6" type="Node3D" parent="ArtifactSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.445693, 0, 1.04733)
+
+[node name="Spawn7" type="Node3D" parent="ArtifactSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.445693, 0, -0.0679664)
+
+[node name="Spawn8" type="Node3D" parent="ArtifactSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243881, 0, 0.653134)
+
 [node name="PlayerStandPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65907, 1.95452)
 

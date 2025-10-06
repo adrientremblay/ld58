@@ -7,6 +7,7 @@ enum ArtifactName {
 	GOLD_RING,
 	DOLL,
 	SILVER_GAUNTLET,
+	RAT,
 }
 
 enum Rarity {
@@ -45,6 +46,13 @@ const ARTIFACT_DATA = {
 		"rarity": Rarity.LEGENDARY,
 		"effect": "Multiplies the dig speed by 150%",
 		"number": 1.50
+	},
+	ArtifactName.RAT: {
+		"name": "Dirty Rat",
+		"value": 0.0,
+		"rarity": Rarity.UNCOMMON,
+		"effect": "Adds 20% to movement speed",
+		"number": 0.20
 	}
 }
 

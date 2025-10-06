@@ -77,8 +77,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vgus"]
-radius = 2.14817
-height = 7.42391
+radius = 3.05726
+height = 14.0049
 
 [node name="Groundskeeper" groups=["groundskeeper"] instance=ExtResource("1_pis34")]
 script = ExtResource("2_8sy0d")
@@ -158,7 +158,7 @@ volume_db = -20.0
 [node name="PlayerDetectionArea" type="Area3D" parent="." index="8"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.37398, -2.95734)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.37398, -4.17672)
 shape = SubResource("CapsuleShape3D_5vgus")
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

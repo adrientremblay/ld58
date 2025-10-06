@@ -4,9 +4,9 @@ extends Camera3D
 
 # Theta, Phi, Radius
 const SCRIPT = [
-	[PI, PI/6, 5.0],
-	[0.0, PI/3, 5.0],
-	[PI, PI/3, 5.0],
+	[PI/2, PI/6, 5.0],
+	[0.0, PI/4, 5.0],
+	[PI/2, PI/4, 5.0],
 	[0.0, PI/6, 5.0]
 ]
 

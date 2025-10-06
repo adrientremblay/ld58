@@ -99,7 +99,7 @@ bones/14/rotation = Quaternion(-0.698217, 0.111768, 0.698218, 0.111768)
 bones/15/rotation = Quaternion(-0.162855, 5.84575e-08, 9.32922e-08, 0.98665)
 
 [node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.24212, 0.00321198, -0.0001259, 0.00321396, 0.242061, -0.00531243, 5.53876e-05, -0.00531364, -0.242083, 0.235172, -1.22715, -0.555654)
+transform = Transform3D(-0.24212, 0.0032119, -0.000125807, 0.00321388, 0.242062, -0.00531206, 5.52982e-05, -0.00531327, -0.242083, 0.235173, -1.22715, -0.555655)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
 light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)

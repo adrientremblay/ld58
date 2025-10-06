@@ -56,7 +56,91 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.779894, -0.616587, -1.72569
 transform = Transform3D(0.617443, 0.235028, 0.231357, 0, 0.491063, -0.498856, -0.329794, 0.440021, 0.433148, 1.5829, 0.50524, -2.49421)
 
 [node name="Groundskeeper" parent="." instance=ExtResource("6_3yumr")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.11928)
 
 [node name="title" parent="." instance=ExtResource("7_3yumr")]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.7559, -1.83301)
+
+[node name="AnchorCenter" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -20.0
+offset_right = 21.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lore" type="Label" parent="AnchorCenter"]
+visible = false
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+text = "The year is 1897. The town of Highcroft is in ruin. Brutally cold winters have devastated the fields. Common folk have resorted to ignoble and depraved measures for survival. Among these, is graverobbing. Many degenerate fortune-seekers pillage the tombs of their once prosperous ancestors."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Instructions" type="Label" parent="AnchorCenter"]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "You play as a graverobber. Your goal is to navigate the graveyard and dig up graves, collecting any artifacts buried with their occupants.
+
+The graveyard is patrolled by multiple groundskeepers. If they spot you, they will begin chasing you and will not relent until they either catch you or you flee the graveyard.
+
+Artifacts in your collection can be equipped. Each artifact type has a special magical effect. Up to five can be equipped at any time.
+
+Once satisfied with the value of your collection, you must exit the graveyard through the main gate. Try and leave with the highest collection value you can."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Controls" type="Label" parent="AnchorCenter"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "[MOUSE]
+- Look around
+- Drag and drop objects
+
+[W,S,A,D]
+Move
+
+[E]
+Interact with graves and the main gate
+
+[SHIFT]
+Sprint
+
+[C]
+View Collection"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AnchorBottom" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.5
+offset_top = -43.0
+offset_right = 21.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LoreButton" type="Button" parent="AnchorBottom"]
+layout_mode = 2
+text = "Lore"
+
+[node name="InstructionsButton" type="Button" parent="AnchorBottom"]
+layout_mode = 2
+text = "Instructions"
+
+[node name="ControlsButton" type="Button" parent="AnchorBottom"]
+layout_mode = 2
+text = "Controls"
+
+[node name="StartGameButton" type="Button" parent="AnchorBottom"]
+layout_mode = 2
+text = "Start Game"

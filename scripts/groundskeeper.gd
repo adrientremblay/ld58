@@ -23,6 +23,7 @@ enum Mode {
 var current_mode: Mode = Mode.PATROLLING
 
 # Constants
+var BASE_SPEED = 1.5
 var RUN_MULTIPLIER = 4.0
 
 func _ready() -> void:
@@ -45,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			return
 		direction = direction.normalized()
 		footstep_animation_player.play("walk_slow")
-		new_velocity = direction
+		new_velocity = direction * BASE_SPEED
 	elif current_mode == Mode.CHASING:
 		var direction = (player.global_position - global_position)
 		direction.y = 0

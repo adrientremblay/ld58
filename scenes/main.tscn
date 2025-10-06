@@ -125,12 +125,12 @@ size = Vector3(43.7148, 1, 1.92432)
 material = SubResource("StandardMaterial3D_tipki")
 
 [node name="Path2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.4566, 0.0485328, 16.9905)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.1683, 0.0485328, 16.9905)
 size = Vector3(23.9142, 1, 1.92432)
 material = SubResource("StandardMaterial3D_tipki")
 
 [node name="Path4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.086, 0.0485328, 16.9905)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0951, 0.0485328, 16.9905)
 size = Vector3(23.9142, 1, 1.92432)
 material = SubResource("StandardMaterial3D_tipki")
 
@@ -598,22 +598,22 @@ player = NodePath("../Player")
 [node name="PatrolNodes" type="Node3D" parent="."]
 
 [node name="Node3D" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2628, 0, 5.89758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4963, 0, 5.89758)
 script = ExtResource("9_85g3d")
 next = NodePath("../Node3D2")
 
 [node name="Node3D2" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2628, 0, 28.3278)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5239, 0, 28.3278)
 script = ExtResource("9_85g3d")
 next = NodePath("../Node3D4")
 
 [node name="Node3D3" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1967, 0, 5.72563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1446, 0, 5.72563)
 script = ExtResource("9_85g3d")
 next = NodePath("../Node3D")
 
 [node name="Node3D4" type="Node3D" parent="PatrolNodes" node_paths=PackedStringArray("next")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8976, 0, 28.0397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0521, 0, 28.0397)
 script = ExtResource("9_85g3d")
 next = NodePath("../Node3D3")
 
@@ -634,43 +634,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99866, 0.534095, 15.5143)
 [node name="tree2" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6841, 0.534095, -0.550098)
 
-[node name="tree" parent="." instance=ExtResource("13_trceg")]
+[node name="tree3" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8742, 0.534096, 10.3562)
 
-[node name="tree2" parent="." instance=ExtResource("13_trceg")]
+[node name="tree4" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6491, 0.534095, 30.2167)
 
-[node name="tree3" parent="." instance=ExtResource("13_trceg")]
+[node name="tree5" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6922, 0.534095, -36.4539)
 
-[node name="tree4" parent="." instance=ExtResource("13_trceg")]
+[node name="tree6" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.3111, 0.534095, -11.938)
 
-[node name="tree5" parent="." instance=ExtResource("13_trceg")]
+[node name="tree7" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00297, 0.534095, -13.2239)
 
-[node name="tree6" parent="." instance=ExtResource("13_trceg")]
+[node name="tree8" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8091, 0.534093, -6.81071)
 
-[node name="tree7" parent="." instance=ExtResource("13_trceg")]
+[node name="tree9" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70328, 0.534095, 20.0314)
 
-[node name="tree8" parent="." instance=ExtResource("13_trceg")]
+[node name="tree10" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6322, 0.534095, -3.01155)
 
-[node name="tree9" parent="." instance=ExtResource("13_trceg")]
+[node name="tree11" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3592, 0.534095, 19.3873)
 
-[node name="tree10" parent="." instance=ExtResource("13_trceg")]
+[node name="tree12" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8107, 0.534095, -29.43)
 
-[node name="tree11" parent="." instance=ExtResource("13_trceg")]
+[node name="tree13" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3763, 0.534095, 16.5372)
 
-[node name="tree12" parent="." instance=ExtResource("13_trceg")]
+[node name="tree14" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.9508, 0.534095, -4.92404)
 
-[node name="tree13" parent="." instance=ExtResource("13_trceg")]
+[node name="tree15" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.244, 0.534095, 40.5715)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]

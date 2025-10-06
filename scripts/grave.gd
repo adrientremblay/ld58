@@ -11,6 +11,7 @@ class_name Grave extends CSGBox3D
 # Artifact scenes
 @onready var pocket_watch_scene: PackedScene = preload("res://assets/models/pocket_watch/pocket_watch.tscn")
 @onready var ring_scene: PackedScene = preload("res://scenes/ring.tscn")
+@onready var doll_scene: PackedScene = preload("res://scenes/doll.tscn")
 
 # Properties
 var grave_active = false
@@ -120,9 +121,13 @@ func spawn_artifacts() -> void:
 	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.POCKET_WATCH].rarity] + spawn_chance_boost:
 		artifact_spawns[indexes_order[0]].add_child(pocket_watch_scene.instantiate())
 	
+	# try and spawn a doll
+	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.DOLL].rarity] + spawn_chance_boost:
+		artifact_spawns[indexes_order[1]].add_child(doll_scene.instantiate())
+	
 	# try and spawn a ring
 	if randf() <= Global.SPAWN_CHANCE_MAP[Global.ARTIFACT_DATA[Global.ArtifactName.GOLD_RING].rarity] + spawn_chance_boost:
-		artifact_spawns[indexes_order[1]].add_child(ring_scene.instantiate())
+		artifact_spawns[indexes_order[2]].add_child(ring_scene.instantiate())
 
 func _on_mound_full_fully_uncovered() -> void:
 	spawn_artifacts()

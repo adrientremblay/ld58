@@ -149,6 +149,7 @@ text = "Start Game"
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cs5ya")
+volume_db = -22.0
 autoplay = true
 
 [connection signal="pressed" from="AnchorBottom/LoreButton" to="." method="_on_lore_button_pressed"]

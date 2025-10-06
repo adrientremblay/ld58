@@ -2,9 +2,10 @@ extends Node
 
 # Enums
 enum ArtifactName {
+	NOTHING, # Does nothing (no effect)
 	POCKET_WATCH,
 	GOLD_RING,
-	NOTHING
+	DOLL
 }
 
 enum Rarity {
@@ -20,6 +21,12 @@ const ARTIFACT_DATA = {
 		"value": 5.0,
 		"rarity": Rarity.COMMON,
 		"effect": "Increases dig speed by 50%"
+	},
+	ArtifactName.DOLL: {
+		"name": "Doll",
+		"value": 10.0,
+		"rarity": Rarity.UNCOMMON,
+		"effect": "Copies the effect of the artifact to the immediate right"
 	},
 	ArtifactName.GOLD_RING: {
 		"name": "Gold Ring",

@@ -4,8 +4,8 @@ extends Camera3D
 const RADIUS: float = 4.0
 
 const SCRIPT = [
-	[0.0, PI/6],
-	[PI/2, PI/6]
+	[PI, PI/6],
+	[0.0, PI/6]
 ]
 
 # Properties
@@ -26,8 +26,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Increment angles
-	theta = lerp(theta, SCRIPT[script_index][0], delta)
-	phi = lerp(phi, SCRIPT[script_index][1], delta)
+	theta = lerp(theta, SCRIPT[script_index][0], delta * speed_theta)
+	phi = lerp(phi, SCRIPT[script_index][1], delta * speed_phi)
 
 	# Clamp phi to avoid flipping at poles
 	phi = clamp(phi, -PI/2 + 0.01, PI/2 - 0.01)

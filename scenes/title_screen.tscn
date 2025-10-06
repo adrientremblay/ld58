@@ -46,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.989597, 2.519)
 script = ExtResource("1_sa3yf")
 
 [node name="Coffin" parent="." instance=ExtResource("4_dc4i4")]
-transform = Transform3D(0.893802, 0, -0.448461, 0, 1, 0, 0.448461, 0, 0.893802, -1.90486, 0, -0.508972)
+transform = Transform3D(0.893802, 0, -0.448461, 0, 1, 0, 0.448461, 0, 0.893802, -1.90486, 0.0210149, -0.508972)
 
 [node name="Grave" parent="." instance=ExtResource("5_e54dn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.779894, -0.616587, -1.72569)

@@ -83,23 +83,8 @@ height = 11.6437
 [node name="Groundskeeper" groups=["groundskeeper"] instance=ExtResource("1_pis34")]
 script = ExtResource("2_8sy0d")
 
-[node name="Skeleton3D" parent="ComponentArmature" index="0"]
-bones/3/rotation = Quaternion(0.253401, 0, 0, 0.967361)
-bones/4/rotation = Quaternion(0.0340333, 0.00158765, 0.817032, 0.575585)
-bones/5/rotation = Quaternion(0.00813545, 0.00280688, 0.412198, 0.911054)
-bones/6/rotation = Quaternion(0.0103674, 0.000564868, 0.155036, 0.987854)
-bones/8/rotation = Quaternion(-0.485851, -0.250263, -0.206079, 0.811695)
-bones/9/rotation = Quaternion(-0.244876, -0.181234, 0.326285, 0.894834)
-bones/10/rotation = Quaternion(-0.00188639, 0.00165858, -0.687773, 0.725922)
-bones/12/position = Vector3(1.0952e-08, -1.16866, 0.0934316)
-bones/12/rotation = Quaternion(0.700698, 0.094985, 0.700698, -0.0949849)
-bones/13/rotation = Quaternion(-0.129397, -1.13786e-07, -4.16773e-08, 0.991593)
-bones/14/position = Vector3(-2.94648e-08, -1.16866, 0.0934316)
-bones/14/rotation = Quaternion(-0.698217, 0.111768, 0.698218, 0.111768)
-bones/15/rotation = Quaternion(-0.162855, 5.84575e-08, 9.32922e-08, 0.98665)
-
 [node name="Lantern" parent="ComponentArmature/Skeleton3D" index="0"]
-transform = Transform3D(-0.24212, 0.0032119, -0.000125807, 0.00321388, 0.242062, -0.00531206, 5.52982e-05, -0.00531327, -0.242083, 0.235173, -1.22715, -0.555655)
+transform = Transform3D(0.044939, 0.0115189, 0.237656, 0.00339206, 0.241802, -0.0123613, -0.23791, 0.00562336, 0.0447146, 1.0037, -1.06603, 0.0787078)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="ComponentArmature/Skeleton3D/Lantern/Lantern" index="0"]
 light_color = Color(0.995225, 0.810319, 2.69532e-06, 1)

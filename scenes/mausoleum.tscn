@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf7uypcw7e3ks"]
+
+[ext_resource type="PackedScene" uid="uid://b31t08k152fym" path="res://assets/models/mausoleum/mausoleum.glb" id="1_xrqiy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrqiy"]
+albedo_color = Color(0.276589, 0.350438, 0.344966, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anbjf"]
+size = Vector3(4.26666, 4.1814, 4.46643)
+
+[node name="mausoleum" instance=ExtResource("1_xrqiy")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xrqiy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0142517, 2.05505, 0.927551)
+shape = SubResource("BoxShape3D_anbjf")

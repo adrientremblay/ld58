@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=24 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://ds0586vuunbye" path="res://assets/audio/night_ambience.mp3" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://1ravjgictgvt" path="res://scenes/gate.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://mdwsrivqmi5j" path="res://scenes/collection.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://cf7uypcw7e3ks" path="res://scenes/mausoleum.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://b28bif71id67a" path="res://scenes/tree.tscn" id="13_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
@@ -903,6 +904,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.9508, 0.534095, -4.92404)
 
 [node name="tree15" parent="Trees" instance=ExtResource("13_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.244, 0.534095, 40.5715)
+
+[node name="Mausoleums" type="Node3D" parent="."]
+
+[node name="mausoleum" parent="." instance=ExtResource("13_a8y0u")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.9539, 0.534095, 28.0011)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]

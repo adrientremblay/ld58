@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dt6x6gd5ur568"]
+[gd_scene load_steps=23 format=3 uid="uid://dt6x6gd5ur568"]
 
 [ext_resource type="PackedScene" uid="uid://gt84xvj50yhs" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://lbkx5yp8tioe" path="res://scripts/main.gd" id="1_sugp2"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://ds0586vuunbye" path="res://assets/audio/night_ambience.mp3" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://1ravjgictgvt" path="res://scenes/gate.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://mdwsrivqmi5j" path="res://scenes/collection.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://b28bif71id67a" path="res://scenes/tree.tscn" id="13_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbgi4"]
 sky_top_color = Color(0.0646474, 0.0864207, 0.116699, 1)
@@ -624,6 +625,14 @@ autoplay = true
 [node name="Collection" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.765, 0, 6.379)
 player = NodePath("../Player")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="tree" parent="Trees" instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99866, 0.534095, 15.5143)
+
+[node name="tree2" parent="Trees" instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6841, 0.534095, -0.550098)
 
 [connection signal="die" from="Player" to="." method="_on_player_die"]
 [connection signal="leave" from="Player" to="." method="_on_player_leave"]

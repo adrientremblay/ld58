@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b28bif71id67a"]
+
+[ext_resource type="PackedScene" uid="uid://bi7c5pb5cmfrv" path="res://assets/models/tree/tree.glb" id="1_avsvi"]
+[ext_resource type="Script" uid="uid://cdu8gfwheyf25" path="res://scripts/tree.gd" id="2_vplca"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vplca"]
+height = 3.36914
+radius = 0.400391
+
+[node name="tree" instance=ExtResource("1_avsvi")]
+script = ExtResource("2_vplca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67997, 0)
+shape = SubResource("CylinderShape3D_vplca")
